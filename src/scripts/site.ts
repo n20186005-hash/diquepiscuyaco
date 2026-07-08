@@ -149,11 +149,11 @@ if (weatherEl) {
       const uvColor = colors[idx];
       const uvText = `${uv} (${uvLevel})`;
       weatherEl.innerHTML = `
-        <h3 style="font-size:1.2rem;font-weight:700;color:var(--color-deep);display:flex;align-items:center;gap:0.5rem;margin:0;">🌤️ ${titles[locale]}</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;color:var(--color-deep);display:flex;align-items:center;gap:0.5rem;margin:0;">${titles[locale]}</h3>
         <div style="display:flex;flex-wrap:wrap;gap:1rem;margin:0.5rem 0;">
-          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;">🌡️ ${temp}°C</div>
-          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;">🌧️ ${precip}mm</div>
-          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;color:${uvColor};">☀️ UV: ${uvText}</div>
+          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;">${temp}°C</div>
+          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;">${precip}mm</div>
+          <div style="background:#f8f9fa;padding:0.5rem 1rem;border-radius:8px;font-weight:600;color:${uvColor};">UV: ${uvText}</div>
         </div>
         <p style="margin:0;font-size:0.95rem;color:var(--color-earth);line-height:1.5;">${msgs[locale](uvText)}</p>
       `;

@@ -6,14 +6,14 @@ import { getSeo } from '../lib/seo';
 import { generateSchema } from '../lib/schema';
 
 interface Props {
-  locale: string;
+  locale: Locale;
   title: string;
   description: string;
   pathOverride?: string;
   includeSchema?: boolean;
 }
 
-const { locale, title, description, pathOverride, includeSchema = true } = Astro.props;
+const { locale, title, description, pathOverride, includeSchema = true } = Astro.props as Props;
 const cfg = localeConfig[locale] || localeConfig.es;
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://diquepiscuyaco.com';
 const canonical = pathOverride ? `${site}${pathOverride}` : `${site}/${locale}`;

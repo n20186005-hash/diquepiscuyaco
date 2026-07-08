@@ -4,11 +4,13 @@ export type FAQItem = { question: string; answer: string };
 export type TransportOption = { name: string; time: string; price: string; steps: string[] };
 
 export type Translations = {
-  nav: { history: string; architecture: string; monuments: string; visiting: string; transportation: string; gallery: string; reviews: string; faq: string; location: string };
+  nav: { history: string; architecture: string; monuments: string; eco: string; visiting: string; transportation: string; gallery: string; reviews: string; faq: string; location: string };
   hero: { tags: string[]; tagline: string; title: string; subtitle: string; cta: string };
   rating: { reviews: string; source: string };
   history: { title: string; intro: string };
+  myths: { title: string; intro: string; items: { title: string; content: string }[] };
   curiosities: { title: string; content: string };
+  eco: { title: string; intro: string; items: string[] };
   architecture: { title: string; intro: string; specs: { structure: { title: string; content: string }; design: { title: string; content: string }; optics: { title: string; content: string } }; plaque: { title: string; items: { label: string; value: string }[] } };
   monuments: { title: string; intro: string; items: { name: string; description: string }[] };
   contrast: { title: string; intro: string; before: string; after: string };
@@ -31,16 +33,48 @@ const ARGENTINA_LINKS: LinkItem[] = [
 
 export const translations: Record<Locale, Translations> = {
   zh: {
-    nav: { history: "历史渊源", architecture: "水库与地貌", monuments: "游玩体验", visiting: "游览信息", transportation: "交通指南", gallery: "照片集锦", reviews: "游客评价", faq: "常见问题", location: "地图位置" },
-    hero: { tags: ["圣路易斯明珠", "山水画库", "亲子休闲"], tagline: "阿根廷 · 圣路易斯省", title: "Dique Piscu Yaco", subtitle: "皮斯库亚科水库 · 清澈碧水 · 科门钦戈内斯山脉", cta: "探索 Piscu Yaco" },
+    nav: { history: "文化与历史", architecture: "水库与地貌", monuments: "游玩体验", eco: "生态责任", visiting: "游览信息", transportation: "交通指南", gallery: "照片集锦", reviews: "游客评价", faq: "常见问题", location: "地图位置" },
+    hero: { tags: ["距梅洛约 25 km", "生态水库", "免费开放"], tagline: "阿根廷 · 圣路易斯省", title: "Dique Piscu Yaco", subtitle: "皮斯库亚科水库 · 清澈碧水 · 科门钦戈内斯山脉", cta: "探索 Piscu Yaco" },
     rating: { reviews: "条评价", source: "Google 评论" },
     history: {
-      title: "历史与起源",
-      intro: `**皮斯库亚科水库（Dique Piscu Yaco）**位于阿根廷圣路易斯省北部的孔克拉山谷（Valle del Conlara），距科塔德拉（Cortaderas）约 6 公里、著名的旅游小镇梅洛（Villa de Merlo）约 15 公里，距离圣路易斯省首府约 190 公里。\n\n**落成与定位**：水库于 **2010 年 12 月 20 日**正式落成，是圣路易斯省第 15 个"水面"（espejo de agua），也是横亘该地的**科门钦戈内斯山脉（Sierras de los Comechingones）中的第一座人工水库**。它的修建是圣路易斯省政府一项宏大水利与旅游规划的组成部分，旨在兼顾区域供水、生态调节与山地旅游休闲。\n\n**名称的由来**："Piscu Yaco" 源自克丘亚语（Quechua）——"piscu" 意为"飞鸟"，"yaco / yaku" 意为"水"，合起来即"**飞鸟的水坑**"（Aguada de los Pájaros），也常被解释为"清水"。这个名字致敬了圣路易斯诗人安东尼奥·埃斯特万·阿圭罗（Antonio Esteban Agüero）的作品《老角豆树大合唱》（Cantata al Algarrobo Abuelo），寄托了人与山水、飞鸟和谐共生的意境。\n\n**原住民的根脉**：孔克拉山谷一带自古便是**科门钦戈内斯（Comechingón）原住民**的传统活动区域。在前往水库的沿途，您仍能在岩画、石器与口述传说中，感受到这片土地深厚而悠远的文化层积。`
+      title: "历史渊源与文化回音",
+      intro: `皮斯库亚科水库（Dique Piscu Yaco）不仅是一项现代水利工程，更是一面倒映着圣路易斯悠久历史的水镜。它坐落于孔克拉山谷（Valle del Conlara），距科塔德拉（Cortaderas）约 6 公里，距著名的山间旅游小镇梅洛（Villa de Merlo）约 **25 公里**（车程多为 25–27 公里），距离圣路易斯省首府约 190 公里。\n\n**科门钦戈内斯人的古老回音**\n早在西班牙人抵达之前，这片群山便是科门钦戈内斯（Comechingones）原住民的家园。这是一个崇尚自然、以岩洞为居的民族。他们敬畏山脉与水源，将水视为大地母亲（Pachamama）的血液。今天，在前往水库的沿途山径中，依然隐藏着他们留下的岩画与石钵（Morteros）。\n\n**克丘亚语中的诗意命名**\n“Piscu Yaco”源自古老的克丘亚语（Quechua），意为“飞鸟的水坑”（Aguada de los Pájaros）。这个极具画面感的名字并非凭空而来，而是为了向圣路易斯最伟大的诗人安东尼奥·埃斯特万·阿圭罗（Antonio Esteban Agüero）致敬。在他的传世名作《老角豆树大合唱》（Cantata al Algarrobo Abuelo）中，山川、飞鸟与参天古树构成了圣路易斯的精神图腾。\n\n**现代生态水利的里程碑**\n皮斯库亚科于 **2010 年 12 月 20 日**正式落成，作为圣路易斯省第 15 个人工湖，也是科门钦戈内斯山脉中的第一座人工水库。总面积约 16.9 公顷的清澈水体，不仅有助于周边微气候调节与干旱期蓄水，也成为黑头鸭、苍鹭等水生鸟类的重要栖息地。`
+    },
+    myths: {
+      title: "原住民传说与山脉神话",
+      intro: "在科门钦戈内斯人的自然观里，山脉与水体并非无生命的景观，而是拥有呼吸与意志的存在。以下传说以诗意的方式，提醒人们以敬畏之心靠近这片“飞鸟的水坑”。",
+      items: [
+        {
+          title: "水源的守护神：蛇与地下世界",
+          content:
+            "在干旱山地，每一处泉眼与水潭都被视为通向“地下世界”的神圣通道。传说中，清澈的水由巨大的灵蛇守护：蛇象征水的流动与大地的生命力。\n\n当人们来到水边取水或采集时，需要保持安静，并在水畔留下微小供品（植物、石块等），以感谢水灵的馈赠并祈求庇佑。\n\n这种把水源神圣化的信仰，与今天强调“保护水体、无痕游览”的生态理念在精神上形成了呼应。"
+        },
+        {
+          title: "太阳、月亮与沉睡的巨人",
+          content:
+            "关于科门钦戈内斯山脉（Sierras de los Comechingones）的起源，原住民口中流传着浪漫而悲壮的创世叙事：远古的巨人为了保护山谷里的生灵免受狂风与恶劣气候侵袭，选择化作岩石，首尾相连，成为今日连绵的山脊。\n\n在这一体系里，山脉被视为大地母亲（Pachamama）隆起的脊梁，太阳（Inti）与月亮（Quilla）赋予它光与时间的节律。\n\n当晨光或夕阳洒在水库背后的花岗岩上，人们相信那是诸神在苏醒或安睡。"
+        },
+        {
+          title: "飞鸟的信使：神鹰（Cóndor）",
+          content:
+            "“Piscu Yaco”得名于飞鸟，而在原住民的信仰中，鸟类尤其是安第斯神鹰（Cóndor）具有穿梭天地的能力。\n\n神鹰被视为连接人间与上天的使者：当部落中的智者或长者逝去，他们的灵魂会由神鹰托起，飞越孔克拉山谷，最终融入群山。\n\n今天，当你在湖畔观鸟，若偶遇高空盘旋的猛禽，也许正是这段古老想象在现实中的回声。"
+        }
+      ]
     },
     curiosities: {
-      title: "隐藏的故事：名字、文化与守护",
-      content: `**为什么叫"飞鸟的水坑"？** 水库四周被低矮的圣路易斯山脉环抱，清澈的水面常年吸引着各类水鸟栖息觅食，"Piscu Yaco" 正是对这一生动画面的克丘亚语写照。不同资料也将其释为"清水"（agua clara），两种解释都指向同一份对纯净自然的珍视。\n\n**诗人笔下的故乡**：圣路易斯诗人安东尼奥·埃斯特万·阿圭罗以故乡风物入诗，其《老角豆树大合唱》把角豆树、飞鸟与山水写成乡愁的图腾。水库以这一意象命名，使冰冷的工程多了一层温柔的人文温度。\n\n**生态保护倡议**：水库及周边是候鸟与当地动植物的重要栖息地。我们呼吁每一位到访者：请将垃圾随身带走、避免使用损害水体的洗涤剂、在指定区域野餐与露营，共同守护这片"飞鸟的水坑"。`
+      title: "命名与诗歌索引",
+      content: `“Piscu Yaco”源自克丘亚语（Quechua），常被译为“飞鸟的水坑”（Aguada de los Pájaros），也有人解释为“清水”（agua clara）。两种译法共同指向一种对纯净水体与生命繁盛的珍视。\n\n这一命名也被普遍认为与圣路易斯诗人安东尼奥·埃斯特万·阿圭罗（Antonio Esteban Agüero）的诗歌意象相关：当混凝土的大坝以诗意的语言被命名，工程便获得了面向自然与公共记忆的另一层含义。`
+    },
+    eco: {
+      title: "生态责任（Eco-Responsibility）",
+      intro: "皮斯库亚科是一处公共水域与野生动物栖息地的交汇点。作为独立的非盈利科普指南，我们倡导以最低影响的方式亲近山水，让这片“飞鸟的水坑”得以长期维持其生态功能。",
+      items: [
+        "**无痕游览**：带走所有垃圾与可回收物，不遗留烟头、塑料或食物残渣",
+        "**保护水体**：不在湖中或入湖岸边使用任何化学洗涤剂、香皂或清洁用品",
+        "**尊重野生动物**：与鸟类保持距离，避免投喂与追逐，使用望远镜或长焦镜头观察",
+        "**遵守指定区域**：野餐与露营仅在允许区域进行，避免踩踏植被与侵入敏感栖息地",
+        "**降低噪声与光扰动**：减少外放音乐与强光照明，尤其在清晨与黄昏观鸟高峰时段"
+      ]
     },
     architecture: {
       title: "水库本体与周边地貌",
@@ -58,7 +92,7 @@ export const translations: Record<Locale, Translations> = {
           { label: "落成时间", value: "2010 年 12 月 20 日" },
           { label: "水面面积", value: "约 16.9 公顷" },
           { label: "行政归属", value: "查卡布科县（Chacabuco）" },
-          { label: "最近城镇", value: "梅洛镇约 15 公里" }
+          { label: "最近城镇", value: "梅洛镇约 25 公里" }
         ]
       }
     },
@@ -69,7 +103,7 @@ export const translations: Record<Locale, Translations> = {
         { name: "皮划艇与划船", description: "平静的湖面是练习皮划艇、独木舟与休闲划船的理想场所。无动力小船能让你以最安静的方式贴近水面、观赏水鸟。" },
         { name: "休闲垂钓", description: "水库放养有常见淡水鱼种，吸引众多钓鱼爱好者前来。请遵守当地关于渔具与捕捞量的规定，践行'钓获即放流'的可持续理念。" },
         { name: "徒步与观鸟", description: "环湖及周边的丘陵步道适合轻徒步。带上望远镜，您可能邂逅苍鹭、野鸭等多种水鸟——这正是'飞鸟的水坑'得名的缘由。" },
-        { name: "湖畔野餐与露营", description: " designated 的野餐与露营区让家庭游客得以在山水之间放松。日落时分支起帐篷，听山风与水声入眠，是难忘的体验。" }
+        { name: "湖畔野餐与露营", description: "指定的野餐与露营区让家庭游客得以在山水之间放松。日落时分支起帐篷，听山风与水声入眠，是难忘的体验。" }
       ]
     },
     contrast: {
@@ -85,21 +119,21 @@ export const translations: Record<Locale, Translations> = {
       price: { title: "门票信息", content: "公共湖畔区域**免费开放**，不收取门票。", note: "部分租赁项目（如船只、露营设施）可能由现场经营者单独收费，请以现场为准。" },
       duration: { title: "建议游览时长", content: "轻松环湖 + 野餐：约 2–3 小时。\n深度徒步 + 观鸟 + 露营：可安排一整天。", note: "与附近的梅洛镇、洛斯莫列斯（Los Molles）串联，可规划 1–2 日山地之旅。" },
       tips: { title: "游览贴士与注意事项", items: [
-        "⚠️ **防晒与补水**：圣路易斯高原日照强烈、气候干燥，请涂抹防晒、佩戴帽子并携带充足饮用水",
+        "**防晒与补水**：圣路易斯高原日照强烈、气候干燥，请涂抹防晒、佩戴帽子并携带充足饮用水",
         "山区昼夜温差较大，建议备一件薄外套",
         "穿着舒适防滑的步行鞋，部分土路在雨后湿滑",
-        "🐦 **观鸟礼仪**：保持安静、勿靠近鸟巢，用长焦镜头代替靠近",
-        "🌱 **无痕山林**：带走所有垃圾，不在水体中使用化学洗涤剂，保护'飞鸟的水坑'",
+        "**观鸟礼仪**：保持安静、勿靠近鸟巢，用长焦镜头代替靠近",
+        "**无痕山林**：带走所有垃圾，不在水体中使用化学洗涤剂，保护“飞鸟的水坑”",
         "驾驶前往时，最后约 2 公里为通往山中的柏油路，雨季请留意路况"
       ] }
     },
     transportation: {
       title: "精准交通指南",
-      airport: { title: "✈️ 从圣路易斯首府 / 机场出发", content: "最近的机场位于圣路易斯省首府（距水库约 190 公里），亦可经科尔多瓦（Córdoba）中转。抵达后建议自驾或包车前往。", options: [
+      airport: { title: "从圣路易斯首府 / 机场出发", content: "最近的机场位于圣路易斯省首府（距水库约 190 公里），亦可经科尔多瓦（Córdoba）中转。抵达后建议自驾或包车前往。", options: [
         { name: "自驾 / 包车（推荐）", price: "约 2–2.5 小时车程", time: "190 公里", steps: ["从圣路易斯首府沿通往梅洛方向的主干道北上", "进入孔克拉山谷后，循'Dique Piscu Yaco'路牌", "在省道 1 号（RP-1）约 25.5 公里处转入通往山中的支线，再行驶约 2 公里即达"] }
       ]},
       publicTransport: {
-        title: "🚌 公共交通",
+        title: "公共交通",
         content: "从梅洛镇可搭乘前往科塔德拉方向的小巴或拼车，在水库附近下车后步行进入。",
         options: [
           {
@@ -113,9 +147,9 @@ export const translations: Record<Locale, Translations> = {
           }
         ]
       },
-      city: { title: "🚗 从梅洛镇（Villa de Merlo）出发", content: "梅洛镇距水库仅约 15 公里，是大多数游客的落脚地。自驾约 20–30 分钟，沿途穿过孔克拉山谷的典型山景。", steps: ["从梅洛镇向北驶入 RP-1", "行驶约 25.5 公里后在支线转向山中", "再行驶约 2 公里柏油路抵达湖畔停车场"] },
+      city: { title: "从梅洛镇（Villa de Merlo）出发", content: "梅洛镇距水库约 **25 公里**，是大多数游客的落脚地。自驾约 20–30 分钟，沿途穿过孔克拉山谷的典型山景。", steps: ["从梅洛镇向南驶入 RP-1", "行驶约 25.5 公里后在支线转向山中", "再行驶约 2 公里柏油路抵达湖畔停车场"] },
       tips: { title: "交通与海拔小贴士", items: [
-        "🌡️ **海拔舒适**：水库地处约 1,000 米上下的山谷，气候比高海拔地区温润，体感舒适",
+        "**海拔与体感**：水库地处约 1,000 米上下的山谷，气候比高海拔地区温润，体感舒适",
         "梅洛镇住宿与餐饮选择丰富，适合作为基地",
         "山区手机信号不稳定，建议提前下载离线地图",
         "可与梅洛镇、洛斯莫列斯安排在同一行程",
@@ -129,7 +163,7 @@ export const translations: Record<Locale, Translations> = {
       nearbyTitle: "周边值得一游的景点",
       nearbyIntro: "游览完皮斯库亚科后，您可顺道探索以下邻近目的地：",
       nearbyItems: [
-        { name: "梅洛镇（Villa de Merlo）", description: "圣路易斯省最负盛名的山间旅游小镇，以宜人气候、手工艺市集与'长寿之地'闻名，距水库仅约 15 公里。" },
+        { name: "梅洛镇（Villa de Merlo）", description: "圣路易斯省最负盛名的山间旅游小镇，以宜人气候、手工艺市集与“长寿之地”闻名，距水库约 25 公里。" },
         { name: "科门钦戈内斯山脉（Sierras de los Comechingones）", description: "横亘圣路易斯与科尔多瓦两省的山脉，遍布徒步路线、瀑布与原住民文化遗迹，是户外爱好者的天堂。" },
         { name: "洛斯莫列斯（Los Molles）", description: "另一座恬静的山谷小镇，以温泉、自然步道与观星条件著称，与皮斯库亚科同属孔克拉旅游走廊。" }
       ]
@@ -139,23 +173,56 @@ export const translations: Record<Locale, Translations> = {
       { question: "皮斯库亚科水库的名字是什么意思？", answer: "“Piscu Yaco” 源自克丘亚语：“piscu” 意为飞鸟，“yaco / yaku” 意为水，合起来即“飞鸟的水坑”（Aguada de los Pájaros），也常被解释为“清水”。这一名称致敬了圣路易斯诗人安东尼奥·埃斯特万·阿圭罗的作品《老角豆树大合唱》。" },
       { question: "水库需要门票吗？开放时间是怎样的？", answer: "公共湖畔区域常年免费开放，不收取门票。建议白天、日落前前往与离开；夜间照明有限。部分船只或露营设施的租赁可能由现场经营者单独收费。" },
       { question: "在皮斯库亚科可以玩什么？", answer: "您可以体验皮划艇与休闲划船、休闲垂钓、环湖轻徒步与观鸟，以及在指定区域野餐与露营。平静的水面与环抱的山脉，使其非常适合家庭与户外爱好者。" },
-      { question: "从梅洛镇怎么去？需要多久？", answer: "梅洛镇距水库约 15 公里。自驾沿 RP-1 向北，约 25.5 公里处转入山中支线再行驶约 2 公里即达，车程约 20–30 分钟。也可搭乘前往科塔德拉方向的小巴在路口下车后步行。" },
+      { question: "从梅洛镇怎么去？需要多久？", answer: "梅洛镇距水库约 **25 公里**。自驾沿 RP-1 **向南**行驶，在约 25.5 公里处转入山中支线再行驶约 2 公里即达，车程约 20–30 分钟。也可搭乘前往科塔德拉方向的小巴在路口下车后步行。" },
       { question: "参观时有什么注意事项？", answer: "高原日照强烈、气候干燥，请注意防晒与补水；山区昼夜温差大。请保持安静观鸟、带走所有垃圾、不在水体中使用化学洗涤剂，共同守护这片“飞鸟的水坑”。" }
     ]},
     location: { title: "地图位置", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina（阿根廷 圣路易斯省）", openMaps: "在 Google Maps 查看位置" },
     footer: { callToAction: "作为圣路易斯山间珍贵的公共水体，请与我们一起爱护环境、保护这片“飞鸟的水坑”。保持景区整洁，让更多人得以共享这份山水之美。", text: "© 2026 皮斯库亚科水库指南 · 保留所有权利。\n本网站是一个独立的第三方科普指南项目，致力于准确传播 Dique Piscu Yaco 的信息。我们与阿根廷政府或任何官方机构均无隶属关系。", made: "本网站是一个独立的非盈利科普项目，为探索者与学习者而建。", linksTitle: "友情链接", links: ARGENTINA_LINKS }
   },
   en: {
-    nav: { history: "History", architecture: "The Reservoir", monuments: "Activities", visiting: "Visit Info", transportation: "Transportation", gallery: "Gallery", reviews: "Reviews", faq: "FAQ", location: "Location" },
-    hero: { tags: ["San Luis Gem", "Mountain Reservoir", "Family Escape"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Piscu Yaco Reservoir · Crystal-clear Waters · Comechingones Sierras", cta: "Explore Piscu Yaco" },
+    nav: { history: "Culture & History", architecture: "The Reservoir", monuments: "Activities", eco: "Eco Responsibility", visiting: "Visit Info", transportation: "Transportation", gallery: "Gallery", reviews: "Reviews", faq: "FAQ", location: "Location" },
+    hero: { tags: ["~25 km from Merlo", "Eco Reservoir", "Free Entry"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Piscu Yaco Reservoir · Crystal-clear Waters · Comechingones Sierras", cta: "Explore Piscu Yaco" },
     rating: { reviews: "reviews", source: "Google Reviews" },
     history: {
       title: "History & Origins",
-      intro: "**Dique Piscu Yaco** lies in the Conlara Valley (Valle del Conlara) of northern San Luis province, Argentina — about 6 km from Cortaderas and 15 km from the popular mountain town of Villa de Merlo, roughly 190 km from the provincial capital.\n\n**Inauguration & Role**: The reservoir was officially inaugurated on **20 December 2010**. It is the 15th 'water mirror' (espejo de agua) of San Luis and the **first reservoir built in the Sierras de los Comechingones**. It forms part of an ambitious provincial plan for water management and mountain tourism, balancing supply, ecology and recreation.\n\n**The Name**: 'Piscu Yaco' comes from Quechua — 'piscu' means 'bird' and 'yaco / yaku' means 'water', together '**the birds' watering place**' (Aguada de los Pájaros), sometimes also read as 'clear water'. The name pays homage to San Luis poet Antonio Esteban Agüero and his 'Cantata al Algarrobo Abuelo' (Cantata to the Old Carob Tree), evoking harmony between people, water and wildlife.\n\n**Indigenous Roots**: The Conlara Valley has long been traditional territory of the **Comechingón** people. Along the way to the reservoir, rock art, stone tools and oral legends still speak of this deep cultural layering."
+      intro: "Dique Piscu Yaco is more than a piece of modern infrastructure: it is a water mirror reflecting the long history of San Luis. It sits in the Conlara Valley (Valle del Conlara), about 6 km from Cortaderas and roughly **25 km** from the mountain town of Villa de Merlo (typically 25–27 km by road), around 190 km from the provincial capital.\n\n**Echoes of the Comechingones**\nLong before the Spanish arrived, these sierras were home to the Comechingones people. Their worldview treated mountains and water as living presences, and water as the blood of Mother Earth (Pachamama). Even today, rock art and stone mortars (morteros) can still be found along nearby trails.\n\n**A Quechua name with poetic weight**\n‘Piscu Yaco’ comes from Quechua and is commonly rendered as ‘the birds’ watering place’ (Aguada de los Pájaros). The name is also widely linked to the imagery of San Luis poet Antonio Esteban Agüero, whose ‘Cantata al Algarrobo Abuelo’ turned birds, mountains and old carob trees into a spiritual emblem of the region.\n\n**A milestone in eco‑oriented waterworks**\nThe reservoir was inaugurated on **20 December 2010**. It is the 15th ‘water mirror’ (espejo de agua) in San Luis and the first reservoir built in the Sierras de los Comechingones. Its clear waters (about 16.9 hectares) support climate regulation and dry‑season storage, and provide habitat for waterbirds such as ducks and herons."
+    },
+    myths: {
+      title: "Indigenous Legends of the Sierras",
+      intro: "In Comechingones cosmology, mountains and water are not inert scenery but living forces. These stories offer a way to approach Piscu Yaco with respect.",
+      items: [
+        {
+          title: "Guardians of the Springs: The Serpent Below",
+          content:
+            "In a dry mountain landscape, springs and pools were treated as sacred passages to an underworld of spirits. A great serpent was said to guard the clear water — a symbol of flow and the life of the earth.\n\nVisitors would keep quiet and leave small offerings by the shore, expressing gratitude and asking for protection.\n\nThe underlying ethic resonates with modern conservation: protect the water body and visit with minimal impact."
+        },
+        {
+          title: "Sun, Moon, and the Sleeping Giants",
+          content:
+            "One origin tale says that ancient giants chose to become rock in order to shield the valley’s beings from harsh winds and storms, forming the ridge‑lines seen today.\n\nWithin this worldview, the sierras are the raised backbone of Pachamama, while the Sun (Inti) and Moon (Quilla) give them rhythm and light.\n\nWhen dawn or dusk colours the granite behind the reservoir, it is imagined as the moment the gods awaken or rest."
+        },
+        {
+          title: "Bird Messengers: The Condor (Cóndor)",
+          content:
+            "Piscu Yaco is named for birds, and birds — especially the Andean condor — are revered as messengers between earth and sky.\n\nIt is said that when elders pass, a condor carries their spirit across the Conlara Valley until it becomes part of the mountains.\n\nToday, spotting a large raptor circling above the lake can feel like a living echo of that ancient imagination."
+        }
+      ]
     },
     curiosities: {
-      title: "Hidden Stories: Name, Culture & Care",
-      content: "**Why 'the birds' watering place'?** The clear water, cradled by low sierras, attracts waterbirds year-round — a living picture captured by the Quechua name. Others translate it as 'clear water' (agua clara); both readings share the same reverence for pristine nature.\n\n**A Poet's Homeland**: San Luis poet Antonio Esteban Agüero wrote tenderly of his homeland. His 'Cantata to the Old Carob Tree' turned carob trees, birds and mountains into emblems of belonging. Naming the reservoir after this imagery gave the engineering work a gentle human warmth.\n\n**Conservation Appeal**: The reservoir and its surroundings are vital habitat for migratory and resident wildlife. We ask every visitor to take rubbish away, avoid detergents that harm the water, and picnic or camp only in designated areas — helping protect this 'birds' watering place'."
+      title: "Naming Notes & Literary Context",
+      content:
+        "‘Piscu Yaco’ is commonly translated from Quechua as ‘the birds’ watering place’ (Aguada de los Pájaros), and is sometimes interpreted as ‘clear water’ (agua clara). Both readings point to the same appreciation of clean water and thriving life.\n\nThe name is also widely associated with San Luis poet Antonio Esteban Agüero, whose imagery in ‘Cantata al Algarrobo Abuelo’ ties birds, mountains and old carob trees to regional identity."
+    },
+    eco: {
+      title: "Eco Responsibility",
+      intro: "Piscu Yaco is a meeting point between a public water body and wildlife habitat. As an independent non‑profit educational guide, we encourage low‑impact visits so the site can keep functioning as an ecosystem.",
+      items: [
+        "**Leave no trace**: take all rubbish and recyclables with you, including cigarette butts and food scraps",
+        "**Protect the water**: avoid soaps, detergents or any chemicals in or near the lake",
+        "**Respect wildlife**: keep distance from birds, do not feed them, and use binoculars or zoom lenses",
+        "**Stay in designated areas**: picnic and camp only where permitted to avoid trampling sensitive habitat",
+        "**Reduce noise and light**: avoid loud music and strong lights, especially at dawn and dusk"
+      ]
     },
     architecture: {
       title: "The Reservoir & Surrounding Landscape",
@@ -173,7 +240,7 @@ export const translations: Record<Locale, Translations> = {
           { label: "Inaugurated", value: "20 December 2010" },
           { label: "Surface Area", value: "about 16.9 hectares" },
           { label: "District", value: "Chacabuco" },
-          { label: "Nearest Town", value: "Villa de Merlo (~15 km)" }
+          { label: "Nearest Town", value: "Villa de Merlo (~25 km)" }
         ]
       }
     },
@@ -200,21 +267,21 @@ export const translations: Record<Locale, Translations> = {
       price: { title: "Entrance", content: "The public lakeside area is **free to enter**; no ticket is charged.", note: "Some rentals (boats, camping gear) may be charged by on-site operators — confirm locally." },
       duration: { title: "Suggested Duration", content: "Easy lakeside loop + picnic: about 2–3 hours.\nHiking + birdwatching + camping: a full day.", note: "Combine with nearby Villa de Merlo or Los Molles for a 1–2 day mountain trip." },
       tips: { title: "Travel Tips & Notes", items: [
-        "⚠️ **Sun & Hydration**: the San Luis highlands are sunny and dry — use sunscreen, wear a hat and carry water",
+        "**Sun & Hydration**: the San Luis highlands are sunny and dry — use sunscreen, wear a hat and carry water",
         "Large day–night temperature swings; bring a light jacket",
         "Wear comfortable non-slip shoes; some dirt paths get slippery after rain",
-        "🐦 **Birding etiquette**: stay quiet, don't approach nests, use a zoom lens instead of getting close",
-        "🌱 **Leave No Trace**: take all rubbish, avoid chemicals in the water, protect the 'birds' watering place'",
+        "**Birding etiquette**: stay quiet, don't approach nests, use a zoom lens instead of getting close",
+        "**Leave No Trace**: take all rubbish, avoid chemicals in the water, protect the 'birds' watering place'",
         "The final ~2 km to the lake is paved mountain road; check conditions in the rainy season"
       ] }
     },
     transportation: {
       title: "Precise Transportation Guide",
-      airport: { title: "✈️ From San Luis Capital / Airport", content: "The nearest airport is at the San Luis provincial capital (~190 km away); Córdoba is an alternative gateway. From there, self-drive or a hired car is recommended.", options: [
+      airport: { title: "From San Luis Capital / Airport", content: "The nearest airport is at the San Luis provincial capital (~190 km away); Córdoba is an alternative gateway. From there, self-drive or a hired car is recommended.", options: [
         { name: "Self-drive / Hire Car (Recommended)", price: "about 2–2.5 hr drive", time: "190 km", steps: ["Head north from the capital on the Merlo-bound road", "In the Conlara Valley follow 'Dique Piscu Yaco' signs", "At Provincial Route 1 (RP-1) km 25.5 turn onto the mountain spur, then ~2 km to the lake"] }
       ]},
       publicTransport: {
-        title: "🚌 Public Transport",
+        title: "Public Transport",
         content: "From Villa de Merlo you can take a minibus or shared ride toward Cortaderas and walk in near the reservoir.",
         options: [
           {
@@ -228,9 +295,9 @@ export const translations: Record<Locale, Translations> = {
           }
         ]
       },
-      city: { title: "🚗 From Villa de Merlo", content: "Merlo is only ~15 km away and is most visitors' base. Driving takes about 20–30 minutes through classic Conlara Valley scenery.", steps: ["From Merlo head north on RP-1", "At ~km 25.5 turn onto the mountain spur", "Drive ~2 km of paved road to the lakeside parking"] },
+      city: { title: "From Villa de Merlo", content: "Merlo is about **25 km** away and is most visitors' base. Driving takes about 20–30 minutes through classic Conlara Valley scenery.", steps: ["From Merlo head south on RP-1", "At ~km 25.5 turn onto the mountain spur", "Drive ~2 km of paved road to the lakeside parking"] },
       tips: { title: "Transport & Altitude Tips", items: [
-        "🌡️ **Comfortable altitude**: the reservoir sits in a valley around ~1,000 m — milder and pleasant compared with high Andes",
+        "**Comfortable altitude**: the reservoir sits in a valley around ~1,000 m — milder and pleasant compared with high Andes",
         "Merlo has rich lodging and dining — a good base",
         "Mobile signal is patchy in the hills; download offline maps",
         "Combine with Merlo and Los Molles in one trip",
@@ -244,7 +311,7 @@ export const translations: Record<Locale, Translations> = {
       nearbyTitle: "Nearby Attractions Worth Visiting",
       nearbyIntro: "After visiting Piscu Yaco, you can easily explore the following nearby destinations:",
       nearbyItems: [
-        { name: "Villa de Merlo", description: "San Luis's best-known mountain town, famous for its mild climate, craft markets and 'land of longevity' — only ~15 km from the reservoir." },
+        { name: "Villa de Merlo", description: "San Luis's best-known mountain town, famous for its mild climate, craft markets and 'land of longevity' — about ~25 km from the reservoir." },
         { name: "Sierras de los Comechingones", description: "A mountain range spanning San Luis and Córdoba, full of trails, waterfalls and indigenous heritage — a paradise for outdoor lovers." },
         { name: "Los Molles", description: "Another tranquil valley town known for hot springs, nature trails and stargazing, part of the Conlara tourism corridor alongside Piscu Yaco." }
       ]
@@ -254,23 +321,56 @@ export const translations: Record<Locale, Translations> = {
       { question: "What does 'Piscu Yaco' mean?", answer: "‘Piscu Yaco’ comes from Quechua: ‘piscu’ means bird and ‘yaco / yaku’ means water — together ‘the birds’ watering place’ (Aguada de los Pájaros), sometimes read as ‘clear water’. The name honours San Luis poet Antonio Esteban Agüero and his ‘Cantata to the Old Carob Tree’." },
       { question: "Is there an entrance fee or fixed opening hours?", answer: "The public lakeside area is free and open year-round, with no ticket. Daytime visits are best; night lighting is limited. Some boat or camping rentals may be charged by on-site operators." },
       { question: "What can I do at Piscu Yaco?", answer: "You can kayak and row, recreational fish, enjoy easy lakeside hiking and birdwatching, and picnic or camp in designated areas. The calm water and encircling hills suit families and outdoor lovers alike." },
-      { question: "How do I get there from Villa de Merlo, and how long?", answer: "Merlo is ~15 km away. Drive north on RP-1, turn onto the mountain spur at ~km 25.5 and continue ~2 km — about 20–30 minutes. A Cortaderas-bound minibus also stops at the access road." },
+      { question: "How do I get there from Villa de Merlo, and how long?", answer: "Merlo is about **25 km** away. Drive **south** on RP-1, turn onto the mountain spur at ~km 25.5 and continue ~2 km — about 20–30 minutes. A Cortaderas-bound minibus also stops at the access road." },
       { question: "What should I keep in mind when visiting?", answer: "The highlands are sunny and dry — protect yourself from the sun and drink water; temperatures swing day to night. Stay quiet for birding, take all rubbish, and avoid chemicals in the water to help protect this ‘birds’ watering place’." }
     ]},
     location: { title: "Map Location", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "View Location on Google Maps" },
     footer: { callToAction: "As a precious public water body in the San Luis mountains, please join us in caring for the environment and protecting this 'birds' watering place'. Keep it clean so more people can share its beauty.", text: "© 2026 Dique Piscu Yaco Guide · All rights reserved.\nThis website is an independent third-party educational guide dedicated to sharing accurate information about Dique Piscu Yaco. We are not affiliated with the Argentine government or any official authority.", made: "This is an independent non-profit educational project, made for explorers and learners.", linksTitle: "Friendly Links", links: ARGENTINA_LINKS }
   },
   es: {
-    nav: { history: "Historia", architecture: "El Embalse", monuments: "Actividades", visiting: "Información", transportation: "Transporte", gallery: "Galería", reviews: "Reseñas", faq: "FAQ", location: "Ubicación" },
-    hero: { tags: ["Joyita de San Luis", "Embalse de Montaña", "Escapada Familiar"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Dique Piscu Yaco · Aguas Cristalinas · Sierras de los Comechingones", cta: "Explorar Piscu Yaco" },
+    nav: { history: "Cultura e Historia", architecture: "El Embalse", monuments: "Actividades", eco: "Responsabilidad Ecológica", visiting: "Información", transportation: "Transporte", gallery: "Galería", reviews: "Reseñas", faq: "FAQ", location: "Ubicación" },
+    hero: { tags: ["~25 km de Merlo", "Dique ecológico", "Entrada gratuita"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Dique Piscu Yaco · Aguas Cristalinas · Sierras de los Comechingones", cta: "Explorar Piscu Yaco" },
     rating: { reviews: "reseñas", source: "Google Reseñas" },
     history: {
       title: "Historia y Orígenes",
-      intro: "El **Dique Piscu Yaco** se encuentra en el Valle del Conlara, en el norte de la provincia de San Luis, Argentina, a unos 6 km de Cortaderas y 15 km de la famosa villa turística de Villa de Merlo, y a 190 km de la capital provincial.\n\n**Inauguración y rol**: El embalse fue inaugurado el **20 de diciembre de 2010**. Es el decimoquinto 'espejo de agua' de San Luis y el **primer dique construido en las Sierras de los Comechingones**. Forma parte de un ambicioso plan provincial de gestión hídrica y turismo de montaña, equilibrando abastecimiento, ecología y recreación.\n\n**El nombre**: 'Piscu Yaco' proviene del quechua: 'piscu' significa 'pájaro' e 'yaco / yaku' significa 'agua', juntos '**la aguada de los pájaros**' (Aguada de los Pájaros), aunque también se lee a veces como 'agua clara'. El nombre rinde homenaje al poeta sanluiseño Antonio Esteban Agüero y su 'Cantata al Algarrobo Abuelo', evocando la armonía entre las personas, el agua y la vida silvestre.\n\n**Raíces indígenas**: El Valle del Conlara fue desde antiguo territorio tradicional del pueblo **Comechingón**. En el camino al dique, el arte rupestre, los utensilios de piedra y las leyendas orales siguen hablando de esa profunda memoria cultural."
+      intro: "El Dique Piscu Yaco es más que una obra moderna: es un espejo de agua que refleja la historia sanluiseña. Está en el Valle del Conlara, a unos 6 km de Cortaderas y aproximadamente **25 km** de Villa de Merlo (por ruta suele ser 25–27 km), y a 190 km de la capital provincial.\n\n**Eco antiguo de los Comechingones**\nAntes de la llegada española, estas sierras fueron hogar del pueblo Comechingones. Su mirada entendía a la montaña y al agua como entidades vivas, y al agua como la sangre de la Pachamama. Aún hoy pueden encontrarse arte rupestre y morteros de piedra en senderos cercanos.\n\n**Un nombre quechua con peso poético**\n‘Piscu Yaco’ proviene del quechua y suele traducirse como ‘la aguada de los pájaros’ (Aguada de los Pájaros). El nombre también se asocia a la imaginería del poeta Antonio Esteban Agüero y su ‘Cantata al Algarrobo Abuelo’, donde aves, sierras y algarrobos se vuelven símbolos de identidad.\n\n**Hito de hidrología con mirada ecológica**\nEl embalse fue inaugurado el **20 de diciembre de 2010**. Es el 15.º ‘espejo de agua’ de San Luis y el primer dique construido en las Sierras de los Comechingones. Sus aguas (unas 16,9 hectáreas) contribuyen a la regulación y al almacenamiento en época seca, y dan refugio a aves acuáticas."
+    },
+    myths: {
+      title: "Leyendas Indígenas de la Sierra",
+      intro: "En la cosmovisión comechingona, el agua y la montaña no son paisaje inerte sino fuerzas vivas. Estas historias invitan a acercarse a Piscu Yaco con respeto.",
+      items: [
+        {
+          title: "Guardianes del Agua: la Serpiente",
+          content:
+            "En un territorio seco, manantiales y pozas se consideraban pasajes sagrados hacia un mundo subterráneo de espíritus. Una gran serpiente guardaba el agua clara, símbolo del fluir y de la vida de la tierra.\n\nAl acercarse al agua, se pedía silencio y se dejaban pequeñas ofrendas, como gesto de gratitud y protección.\n\nEsa ética resuena hoy en la idea de cuidar el agua y visitar sin dejar rastro."
+        },
+        {
+          title: "Sol, Luna y Gigantes Dormidos",
+          content:
+            "Un relato de origen dice que gigantes antiguos eligieron volverse roca para proteger a los seres del valle del viento y el clima hostil, formando las crestas actuales.\n\nEn esta mirada, la sierra es la espalda elevada de la Pachamama, y el Sol (Inti) y la Luna (Quilla) le dan ritmo y luz.\n\nCuando el amanecer o el atardecer tiñe el granito detrás del dique, se imagina como el momento en que los dioses despiertan o descansan."
+        },
+        {
+          title: "Mensajeros del Cielo: el Cóndor",
+          content:
+            "Piscu Yaco lleva un nombre ligado a las aves, y en la tradición indígena el cóndor es un mensajero entre la tierra y el cielo.\n\nSe dice que cuando mueren los mayores, un cóndor eleva su espíritu sobre el Valle del Conlara hasta fundirlo con la montaña.\n\nHoy, ver un gran rapaz girando sobre el lago puede sentirse como un eco vivo de esa imaginación antigua."
+        }
+      ]
     },
     curiosities: {
-      title: "Historias Ocultas: Nombre, Cultura y Cuidado",
-      content: "**¿Por qué 'la aguada de los pájaros'?** El agua cristalina, resguardada por sierras bajas, atrae año tras año a las aves acuáticas —un cuadro vivo que captura el nombre en quechua. Otros lo traducen como 'agua clara' (agua clara); ambas lecturas comparten la misma reverencia por la naturaleza prístina.\n\n**La patria de un poeta**: El poeta sanluiseño Antonio Esteban Agüero escribió con ternura sobre su tierra. Su 'Cantata al Algarrobo Abuelo' convirtió al algarrobo, a los pájaros y a las montañas en emblemas de pertenencia. Bautizar al dique con esa imagen dio al obra de ingeniería un cálido calor humano.\n\n**Llamado a la conservación**: El embalse y sus alrededores son hábitat vital para la fauna migratoria y residente. Pedimos a cada visitante que retire su basura, evite detergentes que dañen el agua y acampe o haga picnic solo en las áreas habilitadas, para cuidar esta 'aguada de los pájaros'."
+      title: "Notas del Nombre y Contexto Literario",
+      content:
+        "‘Piscu Yaco’ suele traducirse del quechua como ‘la aguada de los pájaros’ (Aguada de los Pájaros), y a veces se interpreta como ‘agua clara’ (agua clara). Ambas lecturas apuntan al valor del agua limpia y la vida silvestre.\n\nEl nombre también se vincula a la imaginería del poeta sanluiseño Antonio Esteban Agüero, en cuya ‘Cantata al Algarrobo Abuelo’ las aves y las sierras forman parte de un símbolo regional."
+    },
+    eco: {
+      title: "Responsabilidad Ecológica",
+      intro: "Piscu Yaco es un cuerpo de agua público y un hábitat de fauna. Como guía educativa independiente sin fines de lucro, promovemos una visita de bajo impacto para preservar este ecosistema.",
+      items: [
+        "**No deje rastro**: lleve consigo toda la basura, colillas y restos de comida",
+        "**Proteja el agua**: evite jabones, detergentes o químicos en o cerca del lago",
+        "**Respete la fauna**: mantenga distancia con las aves, no las alimente, use binoculares o zoom",
+        "**Use áreas habilitadas**: picnic y acampe solo donde esté permitido para no dañar el hábitat",
+        "**Reduzca ruido y luz**: evite música fuerte y luces intensas, sobre todo al amanecer y atardecer"
+      ]
     },
     architecture: {
       title: "El Embalse y el Paisaje Circundante",
@@ -288,7 +388,7 @@ export const translations: Record<Locale, Translations> = {
           { label: "Inaugurado", value: "20 de diciembre de 2010" },
           { label: "Superficie", value: "unas 16,9 hectáreas" },
           { label: "Departamento", value: "Chacabuco" },
-          { label: "Localidad más cercana", value: "Villa de Merlo (~15 km)" }
+          { label: "Localidad más cercana", value: "Villa de Merlo (~25 km)" }
         ]
       }
     },
@@ -315,21 +415,21 @@ export const translations: Record<Locale, Translations> = {
       price: { title: "Entrada", content: "El área pública costera es de **acceso libre y gratuito**; no se cobra entrada.", note: "Algunos alquileres (botes, equipo de camping) pueden tener cargo por parte de operadores locales — consulte in situ." },
       duration: { title: "Duración Sugerida", content: "Recorrida costera + picnic: unas 2–3 horas.\nSenderismo + avistamiento + acampe: un día completo.", note: "Combine con Villa de Merlo o Los Molles para un viaje de 1–2 días." },
       tips: { title: "Consejos y Notas", items: [
-        "⚠️ **Sol e hidratación**: la altura sanluiseña es soleada y seca — use protector solar, sombrero y lleva agua",
+        "**Sol e hidratación**: la altura sanluiseña es soleada y seca — use protector solar, sombrero y lleva agua",
         "Gran amplitud térmica día-noche; lleve una chaqueta liviana",
         "Calzado cómodo y antideslizante; algunos senderos de tierra se resbalan tras la lluvia",
-        "🐦 **Etiqueta de avistamiento**: silencio, no acercarse a los nidos, use zoom en lugar de acercarse",
-        "🌱 **No deje rastro**: retire su basura, evite químicos en el agua, cuide la 'aguada de los pájaros'",
+        "**Etiqueta de avistamiento**: silencio, no acercarse a los nidos, use zoom en lugar de acercarse",
+        "**No deje rastro**: retire su basura, evite químicos en el agua, cuide la 'aguada de los pájaros'",
         "Los últimos ~2 km son camino de ripio/pavimento de montaña; revise el estado en temporada de lluvias"
       ] }
     },
     transportation: {
       title: "Guía de Transporte Precisa",
-      airport: { title: "✈️ Desde la Capital / Aeropuerto de San Luis", content: "El aeropuerto más cercano está en la capital provincial (~190 km); Córdoba es una alternativa. Desde allí se recomienda auto propio o alquilado.", options: [
+      airport: { title: "Desde la Capital / Aeropuerto de San Luis", content: "El aeropuerto más cercano está en la capital provincial (~190 km); Córdoba es una alternativa. Desde allí se recomienda auto propio o alquilado.", options: [
         { name: "Auto propio / alquilado (Recomendado)", price: "unos 2–2,5 hs en auto", time: "190 km", steps: ["Desde la capital tome la ruta norte hacia Merlo", "En el Valle del Conlara siga los carteles 'Dique Piscu Yaco'", "En la Ruta Provincial 1 (RP-1) km 25,5 doble al camino de las sierras y recorra ~2 km hasta el lago"] }
       ]},
       publicTransport: {
-        title: "🚌 Transporte Público",
+        title: "Transporte Público",
         content: "Desde Villa de Merlo puede tomar un micro o viaje compartido hacia Cortaderas y caminar hacia el dique.",
         options: [
           {
@@ -343,9 +443,9 @@ export const translations: Record<Locale, Translations> = {
           }
         ]
       },
-      city: { title: "🚗 Desde Villa de Merlo", content: "Merlo queda a solo ~15 km y es la base de la mayoría. En auto son unos 20–30 minutos por el típico paisaje del Valle del Conlara.", steps: ["Desde Merlo tome RP-1 hacia el norte", "En ~km 25,5 gire al camino de las sierras", "Recorra ~2 km de pavimento hasta el estacionamiento costero"] },
+      city: { title: "Desde Villa de Merlo", content: "Merlo está a aproximadamente **25 km** y es la base de la mayoría. En auto son unos 20–30 minutos por el típico paisaje del Valle del Conlara.", steps: ["Desde Merlo tome RP-1 hacia el sur", "En ~km 25,5 gire al camino de las sierras", "Recorra ~2 km de pavimento hasta el estacionamiento costero"] },
       tips: { title: "Transporte y Altura", items: [
-        "🌡️ **Altura cómoda**: el dique está en un valle a ~1.000 m — más templado y agradable que la alta montaña",
+        "**Altura cómoda**: el dique está en un valle a ~1.000 m — más templado y agradable que la alta montaña",
         "Merlo tiene buena oferta de alojamiento y gastronomía como base",
         "La señal de celular es inestable en las sierras; descargue mapas offline",
         "Combine con Merlo y Los Molles en un mismo viaje",
@@ -359,7 +459,7 @@ export const translations: Record<Locale, Translations> = {
       nearbyTitle: "Atracciones Cercanas que Valen la Pena",
       nearbyIntro: "Tras visitar Piscu Yaco, puede recorrer fácilmente los siguientes destinos cercanos:",
       nearbyItems: [
-        { name: "Villa de Merlo", description: "La villa de montaña más conocida de San Luis, famosa por su clima benigno, ferias artesanales y 'tierra de la longevidad', a solo ~15 km del dique." },
+        { name: "Villa de Merlo", description: "La villa de montaña más conocida de San Luis, famosa por su clima benigno, ferias artesanales y 'tierra de la longevidad', a ~25 km del dique." },
         { name: "Sierras de los Comechingones", description: "Cordón que abarca San Luis y Córdoba, lleno de senderos, cascadas y herencia indígena — un paraíso para el aire libre." },
         { name: "Los Molles", description: "Otro tranquilo pueblo de valle, conocido por aguas termales, senderos y observación de estrellas, parte del corredor Conlara junto a Piscu Yaco." }
       ]
@@ -369,23 +469,56 @@ export const translations: Record<Locale, Translations> = {
       { question: "¿Qué significa 'Piscu Yaco'?", answer: "‘Piscu Yaco’ proviene del quechua: ‘piscu’ significa pájaro e ‘yaco / yaku’ agua, juntos ‘la aguada de los pájaros’ (Aguada de los Pájaros), a veces leído como ‘agua clara’. El nombre honra al poeta sanluiseño Antonio Esteban Agüero y su ‘Cantata al Algarrobo Abuelo’." },
       { question: "¿Se paga entrada o hay horario fijo?", answer: "El área pública costera es libre y gratuita todo el año, sin ticket. Lo ideal es de día; la iluminación nocturna es limitada. Algunos alquileres de botes o camping pueden tener cargo por operadores locales." },
       { question: "¿Qué se puede hacer en Piscu Yaco?", answer: "Puede hacer kayak y remo, pesca deportiva, senderismo costero y avistamiento de aves, y picnic o acampe en zonas habilitadas. El agua calmada y las sierras lo hacen ideal para familias y amantes del aire libre." },
-      { question: "¿Cómo llegar desde Villa de Merlo y cuánto tarda?", answer: "Merlo queda a ~15 km. Tome RP-1 al norte, gire al camino de las sierras en ~km 25,5 y recorra ~2 km — unos 20–30 minutos. Un micro a Cortaderas también baja en el acceso." },
+      { question: "¿Cómo llegar desde Villa de Merlo y cuánto tarda?", answer: "Merlo está a ~**25 km**. Tome RP-1 hacia el **sur**, gire al camino de las sierras en ~km 25,5 y recorra ~2 km — unos 20–30 minutos. Un micro a Cortaderas también baja en el acceso." },
       { question: "¿Qué precauciones tener al visitar?", answer: "La altura es soleada y seca: protéjase del sol e hidrátese; hay amplitud térmica. Guarde silencio para observar aves, retire su basura y evite químicos en el agua para cuidar esta ‘aguada de los pájaros’." }
     ]},
     location: { title: "Ubicación", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "Ver en Google Maps" },
     footer: { callToAction: "Como cuerpo de agua público y preciado de las sierras de San Luis, únete a nosotros para cuidar el ambiente y proteger esta 'aguada de los pájaros'. Mantenla limpia para que más personas compartan su belleza.", text: "© 2026 Guía de Dique Piscu Yaco · Todos los derechos reservados.\nEste sitio es un proyecto independiente de guía educativa de terceros, dedicado a difundir información precisa sobre Dique Piscu Yaco. No estamos afiliados con el gobierno argentino ni con autoridad oficial alguna.", made: "Este es un proyecto educativo sin fines de lucro, hecho para exploradores y aprendices.", linksTitle: "Enlaces Amigos", links: ARGENTINA_LINKS }
   },
   it: {
-    nav: { history: "Storia", architecture: "L'Invaso", monuments: "Attività", visiting: "Info Visita", transportation: "Trasporti", gallery: "Galleria", reviews: "Recensioni", faq: "FAQ", location: "Posizione" },
-    hero: { tags: ["Gemma di San Luis", "Lago di Montagna", "Fuga in Famiglia"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Dique Piscu Yaco · Acque Cristalline · Sierras de los Comechingones", cta: "Esplora Piscu Yaco" },
+    nav: { history: "Cultura e Storia", architecture: "L'Invaso", monuments: "Attività", eco: "Responsabilità Ecologica", visiting: "Info Visita", transportation: "Trasporti", gallery: "Galleria", reviews: "Recensioni", faq: "FAQ", location: "Posizione" },
+    hero: { tags: ["~25 km da Merlo", "Invaso ecologico", "Ingresso gratuito"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Dique Piscu Yaco · Acque Cristalline · Sierras de los Comechingones", cta: "Esplora Piscu Yaco" },
     rating: { reviews: "recensioni", source: "Recensioni Google" },
     history: {
       title: "Storia e Origini",
-      intro: "Il **Dique Piscu Yaco** sorge nella Valle del Conlara, nel nord della provincia di San Luis (Argentina), a circa 6 km da Cortaderas e 15 km dalla rinomata località di montagna Villa de Merlo, e a 190 km dal capoluogo provinciale.\n\n**Inaugurazione e ruolo**: il bacino è stato inaugurato il **20 dicembre 2010**. È il quindicesimo 'specchio d'acqua' (espejo de agua) di San Luis e il **primo invaso costruito nelle Sierras de los Comechingones**. Fa parte di un ambizioso piano provinciale per la gestione idrica e il turismo di montagna, bilanciando approvvigionamento, ecologia e ricreazione.\n\n**Il nome**: 'Piscu Yaco' viene dal quechua: 'piscu' significa 'uccello' e 'yaco / yaku' significa 'acqua', insieme '**l'abbeveratoio degli uccelli**' (Aguada de los Pájaros), a volte letto anche come 'acqua chiara'. Il nome rende omaggio al poeta di San Luis Antonio Esteban Agüero e alla sua 'Cantata al Algarrobo Abuelo' (Cantata al Carrubo Vecchio), evocando l'armonia tra persone, acqua e natura.\n\n**Radici indigene**: la Valle del Conlara è da sempre territorio tradizionale del popolo **Comechingón**. Nel tragitto verso il bacino, l'arte rupestre, gli strumenti di pietra e i racconti orali continuano a raccontare questa profonda memoria culturale."
+      intro: "Il Dique Piscu Yaco è più di un'opera moderna: è uno specchio d'acqua che riflette la lunga storia di San Luis. Si trova nella Valle del Conlara, a circa 6 km da Cortaderas e circa **25 km** da Villa de Merlo (su strada spesso 25–27 km), a circa 190 km dal capoluogo provinciale.\n\n**Echi dei Comechingones**\nPrima dell'arrivo degli spagnoli, queste sierras erano la casa del popolo Comechingones. La loro visione considerava montagna e acqua presenze vive, e l'acqua come sangue della Pachamama. Ancora oggi si possono trovare pitture rupestri e mortai di pietra (morteros) lungo sentieri vicini.\n\n**Un nome quechua, una risonanza poetica**\n‘Piscu Yaco’ viene dal quechua ed è spesso reso come ‘l'abbeveratoio degli uccelli’ (Aguada de los Pájaros). Il nome è anche associato all'immaginario del poeta Antonio Esteban Agüero e alla sua ‘Cantata al Algarrobo Abuelo’, dove uccelli, montagne e vecchi carrubi diventano simboli identitari.\n\n**Un traguardo di idrologia con attenzione ecologica**\nIl bacino è stato inaugurato il **20 dicembre 2010**. È il quindicesimo ‘specchio d'acqua’ di San Luis e il primo invaso costruito nelle Sierras de los Comechingones. Le sue acque (circa 16,9 ettari) contribuiscono alla regolazione e alla riserva nei periodi secchi e ospitano numerose specie di uccelli acquatici."
+    },
+    myths: {
+      title: "Miti Indigeni della Sierra",
+      intro: "Nella cosmologia dei Comechingones, acqua e montagna non sono scenari inerti ma forze vive. Questi racconti invitano a vivere Piscu Yaco con rispetto.",
+      items: [
+        {
+          title: "Custodi dell'Acqua: il Serpente",
+          content:
+            "In un paesaggio montano arido, sorgenti e pozze erano considerate passaggi sacri verso un mondo sotterraneo di spiriti. Un grande serpente avrebbe custodito l'acqua chiara, simbolo del flusso e della vita della terra.\n\nAvvicinandosi all'acqua si chiedeva silenzio e si lasciavano piccole offerte sulla riva, come ringraziamento e richiesta di protezione.\n\nQuesto principio risuona oggi nella conservazione: proteggere l'acqua e visitare con impatto minimo."
+        },
+        {
+          title: "Sole, Luna e Giganti Addormentati",
+          content:
+            "Un mito d'origine racconta che antichi giganti scelsero di diventare roccia per proteggere la valle dal vento e dal clima ostile, formando le creste visibili oggi.\n\nIn questa visione, le sierras sono la spina dorsale sollevata della Pachamama, mentre Sole (Inti) e Luna (Quilla) donano ritmo e luce.\n\nQuando l'alba o il tramonto colora il granito dietro il lago, lo si immagina come il momento in cui gli dèi si svegliano o riposano."
+        },
+        {
+          title: "Messaggeri del Cielo: il Condor (Cóndor)",
+          content:
+            "Piscu Yaco porta un nome legato agli uccelli e, nella tradizione indigena, il condor è un messaggero tra terra e cielo.\n\nSi dice che quando muoiono gli anziani, un condor solleva il loro spirito sopra la Valle del Conlara fino a fonderlo con la montagna.\n\nOggi, vedere un grande rapace che gira alto sopra il lago può sembrare un'eco vivente di quell'immaginazione antica."
+        }
+      ]
     },
     curiosities: {
-      title: "Storie Nascoste: Nome, Cultura e Cura",
-      content: "**Perché 'l'abbeveratoio degli uccelli'?** L'acqua cristallina, racchiusa da basse sierras, attira tutto l'anno gli uccelli acquatici — un quadro vivo colto dal nome in quechua. Altri lo traducono 'acqua chiara' (agua clara); entrambe le letture condividono la stessa riverenza per la natura intatta.\n\n**La patria di un poeta**: il poeta di San Luis Antonio Esteban Agüero scrisse con tenerezza della sua terra. La sua 'Cantata al Carrubo Vecchio' trasformò carrubi, uccelli e montagne in emblemi di appartenenza. Battezzare il bacino con questa immagine diede all'opera di ingegneria un caldo calore umano.\n\n**Appello alla conservazione**: il bacino e i dintorni sono habitat vitale per la fauna migratrice e residente. Chiediamo a ogni visitatore di portar via i rifiuti, evitare detersivi dannosi per l'acqua e fare picnic o campeggio solo nelle aree attrezzate, per proteggere questo 'abbeveratoio degli uccelli'."
+      title: "Note sul Nome e Contesto Letterario",
+      content:
+        "‘Piscu Yaco’ è spesso tradotto dal quechua come ‘l'abbeveratoio degli uccelli’ (Aguada de los Pájaros) e talvolta interpretato come ‘acqua chiara’ (agua clara). Entrambe le letture rimandano al valore dell'acqua pulita e della vita selvatica.\n\nIl nome è anche collegato all'immaginario del poeta Antonio Esteban Agüero, nella cui ‘Cantata al Algarrobo Abuelo’ uccelli, montagne e vecchi carrubi diventano simboli della regione."
+    },
+    eco: {
+      title: "Responsabilità Ecologica",
+      intro: "Piscu Yaco è un incontro tra un bene pubblico e un habitat naturale. Come guida educativa indipendente non profit, promuoviamo una visita a basso impatto per preservare l'ecosistema.",
+      items: [
+        "**Non lasciare tracce**: porta via tutti i rifiuti, mozziconi e avanzi di cibo",
+        "**Proteggi l'acqua**: evita saponi, detergenti o prodotti chimici in o vicino al lago",
+        "**Rispetta la fauna**: mantieni distanza dagli uccelli, non alimentarli, usa binocolo o zoom",
+        "**Resta nelle aree consentite**: picnic e campeggio solo dove è permesso per non danneggiare l'habitat",
+        "**Riduci rumore e luce**: evita musica alta e luci forti, soprattutto all'alba e al tramonto"
+      ]
     },
     architecture: {
       title: "L'Invaso e il Paesaggio Circostante",
@@ -403,7 +536,7 @@ export const translations: Record<Locale, Translations> = {
           { label: "Inaugurato", value: "20 dicembre 2010" },
           { label: "Superficie", value: "circa 16,9 ettari" },
           { label: "Dipartimento", value: "Chacabuco" },
-          { label: "Località vicina", value: "Villa de Merlo (~15 km)" }
+          { label: "Località vicina", value: "Villa de Merlo (~25 km)" }
         ]
       }
     },
@@ -430,21 +563,21 @@ export const translations: Record<Locale, Translations> = {
       price: { title: "Ingresso", content: "L'area pubblica costiera è **libera e gratuita**; non si paga biglietto.", note: "Alcuni noleggi (barche, attrezzatura da campeggio) possono essere a pagamento da operatori locali — verifica sul posto." },
       duration: { title: "Durata Consigliata", content: "Giro costiero + picnic: circa 2–3 ore.\nTrekking + birdwatching + campeggio: una giornata intera.", note: "Combina con Villa de Merlo o Los Molles per un viaggio di 1–2 giorni." },
       tips: { title: "Consigli e Note", items: [
-        "⚠️ **Sole e idratazione**: l'altopiano di San Luis è soleggiato e secco — usa crema solare, cappello e porta acqua",
+        "**Sole e idratazione**: l'altopiano di San Luis è soleggiato e secco — usa crema solare, cappello e porta acqua",
         "Forte escursione termica giorno-notte; porta una giacca leggera",
         "Scarpe comode e antiscivolo; alcuni sentieri di terra sono scivolosi dopo la pioggia",
-        "🐦 **Etichetta birdwatching**: silenzio, non avvicinarsi ai nidi, usa lo zoom invece di avvicinarti",
-        "🌱 **Lascia solo orme**: porta via i rifiuti, evita prodotti chimici nell'acqua, proteggi l'abbeveratoio degli uccelli",
+        "**Etichetta birdwatching**: silenzio, non avvicinarsi ai nidi, usa lo zoom invece di avvicinarti",
+        "**Lascia solo orme**: porta via i rifiuti, evita prodotti chimici nell'acqua, proteggi l'abbeveratoio degli uccelli",
         "Gli ultimi ~2 km sono strada di montagna; controlla le condizioni in stagione delle piogge"
       ] }
     },
     transportation: {
       title: "Guida Precisa ai Trasporti",
-      airport: { title: "✈️ Dalla Capitale / Aeroporto di San Luis", content: "L'aeroporto più vicino è a San Luis capitale (~190 km); Córdoba è un'alternativa. Da lì si consiglia auto propria o a noleggio.", options: [
+      airport: { title: "Dalla Capitale / Aeroporto di San Luis", content: "L'aeroporto più vicino è a San Luis capitale (~190 km); Córdoba è un'alternativa. Da lì si consiglia auto propria o a noleggio.", options: [
         { name: "Auto propria / a noleggio (Consigliato)", price: "circa 2–2,5 h", time: "190 km", steps: ["Dalla capitale prendi la strada nord verso Merlo", "Nella Valle del Conlara segui i cartelli 'Dique Piscu Yaco'", "Sulla Ruta Provincial 1 (RP-1) al km 25,5 gira verso le sierras e prosegui ~2 km fino al lago"] }
       ]},
       publicTransport: {
-        title: "🚌 Trasporto Pubblico",
+        title: "Trasporto Pubblico",
         content: "Da Villa de Merlo puoi prendere un pullman o un passaggio condiviso verso Cortaderas e proseguire a piedi fino al bacino.",
         options: [
           {
@@ -458,9 +591,9 @@ export const translations: Record<Locale, Translations> = {
           }
         ]
       },
-      city: { title: "🚗 Da Villa de Merlo", content: "Merlo dista solo ~15 km ed è la base della maggior parte dei visitatori. In auto sono circa 20–30 minuti attraverso il tipico paesaggio della Valle del Conlara.", steps: ["Da Merlo prendi RP-1 verso nord", "Al ~km 25,5 gira verso le sierras", "Percorri ~2 km di asfalto fino al parcheggio sulla riva"] },
+      city: { title: "Da Villa de Merlo", content: "Merlo dista circa **25 km** ed è la base della maggior parte dei visitatori. In auto sono circa 20–30 minuti attraverso il tipico paesaggio della Valle del Conlara.", steps: ["Da Merlo prendi RP-1 verso sud", "Al ~km 25,5 gira verso le sierras", "Percorri ~2 km di asfalto fino al parcheggio sulla riva"] },
       tips: { title: "Trasporto e Altitudine", items: [
-        "🌡️ **Altitudine confortevole**: il bacino è in una valle a ~1.000 m — più mite e piacevole dell'alta montagna",
+        "**Altitudine confortevole**: il bacino è in una valle a ~1.000 m — più mite e piacevole dell'alta montagna",
         "Merlo offre buon alloggio e ristorazione come base",
         "Il segnale cellulare è instabile in collina; scarica mappe offline",
         "Combina con Merlo e Los Molles in un unico viaggio",
@@ -474,7 +607,7 @@ export const translations: Record<Locale, Translations> = {
       nearbyTitle: "Attrazioni dei Dintorni da Visitare",
       nearbyIntro: "Dopo aver visitato Piscu Yaco, puoi esplorare facilmente le seguenti destinazioni vicine:",
       nearbyItems: [
-        { name: "Villa de Merlo", description: "La località di montagna più nota di San Luis, famosa per il clima mite, i mercatini artigianali e la 'terra della longevità', a soli ~15 km dal bacino." },
+        { name: "Villa de Merlo", description: "La località di montagna più nota di San Luis, famosa per il clima mite, i mercatini artigianali e la 'terra della longevità', a circa ~25 km dal bacino." },
         { name: "Sierras de los Comechingones", description: "Catena tra San Luis e Córdoba, ricca di sentieri, cascate e patrimonio indigeno — un paradiso per gli amanti dell'outdoor." },
         { name: "Los Molles", description: "Un'altra tranquilla cittadina di valle, nota per terme, sentieri e osservazione delle stelle, parte del corridoio Conlara assieme a Piscu Yaco." }
       ]
@@ -484,7 +617,7 @@ export const translations: Record<Locale, Translations> = {
       { question: "Cosa significa 'Piscu Yaco'?", answer: "‘Piscu Yaco’ viene dal quechua: ‘piscu’ significa uccello e ‘yaco / yaku’ acqua, insieme ‘l'abbeveratoio degli uccelli’ (Aguada de los Pájaros), a volte letto come ‘acqua chiara’. Il nome onora il poeta di San Luis Antonio Esteban Agüero e la sua ‘Cantata al Carrubo Vecchio’." },
       { question: "C'è un biglietto d'ingresso o un orario fisso?", answer: "L'area pubblica sulla riva è libera e gratuita tutto l'anno, senza biglietto. Meglio di giorno; l'illuminazione notturna è limitata. Alcuni noleggi di barche o campeggio possono essere a pagamento da operatori locali." },
       { question: "Cosa si può fare a Piscu Yaco?", answer: "Puoi fare kayak e voga, pesca sportiva, facili passeggiate costiere e birdwatching, e picnic o campeggio nelle aree attrezzate. L'acqua calma e le sierras lo rendono ideale per famiglie e amanti dell'outdoor." },
-      { question: "Come arrivarci da Villa de Merlo e quanto tempo serve?", answer: "Merlo dista ~15 km. Prendi RP-1 a nord, gira verso le sierras al ~km 25,5 e prosegui ~2 km — circa 20–30 minuti. Un pullman per Cortaderas scende anche all'accesso." },
+      { question: "Come arrivarci da Villa de Merlo e quanto tempo serve?", answer: "Merlo dista circa **25 km**. Prendi RP-1 verso **sud**, gira verso le sierras al ~km 25,5 e prosegui ~2 km — circa 20–30 minuti. Un pullman per Cortaderas scende anche all'accesso." },
       { question: "Cosa bisogna tener presente visitando?", answer: "L'altopiano è soleggiato e secco: proteggiti dal sole e idratati; c'è forte escursione termica. Silenzio per il birdwatching, porta via i rifiuti ed evita sostanze chimiche nell'acqua per proteggere questo ‘abbeveratoio degli uccelli’." }
     ]},
     location: { title: "Posizione", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "Vedi su Google Maps" },
