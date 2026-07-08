@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "node scripts/generate-gallery.js",
+    "predev": "node scripts/generate-gallery.cjs",
     "dev": "astro dev",
-    "prebuild": "node scripts/generate-gallery.js",
+    "prebuild": "node scripts/generate-gallery.cjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"

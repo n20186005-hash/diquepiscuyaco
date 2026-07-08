@@ -12,6 +12,9 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  redirects: {
+    '/': '/es',
+  },
   integrations: [
     sitemap({
       i18n: {
