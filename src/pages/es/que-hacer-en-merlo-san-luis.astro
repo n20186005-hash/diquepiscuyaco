@@ -1,0 +1,52 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+
+const related = [
+  { href: '/es/diques-en-san-luis', title: 'Diques en San Luis', text: 'Piscu Yaco y otros espejos de agua para disfrutar la naturaleza.' },
+  { href: '/es/cortaderas-san-luis', title: 'Cortaderas, San Luis', text: 'El pueblo donde nace el dique: qué ver y cómo llegar.' },
+  { href: '/es/circuito-sur-piscu-yaco', title: 'Circuito Sur desde Merlo', text: 'Ruta por Piscu Yaco, Cortaderas y Villa Larca.' },
+  { href: '/es/fotos-dique-piscu-yaco', title: 'Fotos del Dique Piscu Yaco', text: 'Galería real del lago, las playas y las sierras.' },
+];
+---
+
+<SubpageLayout
+  slug="que-hacer-en-merlo-san-luis"
+  title="Qué hacer en Merlo, San Luis | Atracciones, planes y el Dique Piscu Yaco"
+  description="Qué hacer en Merlo, San Luis: atracciones, miradores, balnearios, senderos, artesanías y el Dique Piscu Yaco a 25 km. Planifica tu visita."
+  crumb="Qué hacer en Merlo"
+  intro="Villa de Merlo, en el piedemonte de las **Sierras de los Comechingones**, es la base ideal para recorrer el sur de San Luis. Reúne clima benigno, ferias artesanales y acceso rápido al **Dique Piscu Yaco**, a solo 25 km."
+  sections={[
+    {
+      heading: 'El pueblo y su clima',
+      body: 'Merlo es conocida como la **“tierra de la longevidad”** por su clima templado y seco, ideal para descansar. El centro se recorre a pie: plazas con aroma a eucalipto, chocolaterías y el tradicional **mercado artesanal** los fines de semana.',
+    },
+    {
+      heading: 'Miradores y naturaleza',
+      body: 'Desde el **Mirador de la Virgen** y el **Mirador de El Cajón** se abren vistas de todo el Valle del Conlara. Al amanecer y al atardecer, las sierras se tiñen de colores cálidos: un clásico de la fotografía de San Luis.',
+    },
+    {
+      heading: 'Ríos, balnearios y agua',
+      body: 'Además de los ríos de montaña, el gran atractivo acuático de la zona es el **Dique Piscu Yaco**, con playas de arena, kayak y un espejo de agua cristalina. Es el plan acuático favorito de quienes se alojan en Merlo.',
+    },
+    {
+      heading: 'Senderismo y avistamiento de aves',
+      body: 'Las lomas de los Comechingones ofrecen caminatas de dificultad suave, con rocas graníticas y bañados de helechos. Lleve binoculares: garzas y cóndores sobrevuelan el valle, justo lo que da nombre a la **“aguada de los pájaros”**.',
+    },
+    {
+      heading: 'Gastronomía y productos locales',
+      body: 'No deje de probar los **dulces artesanales**, quesos de cabra y miel de la zona. Las ferias callejeras reúnen tejedores, ceramistas y productores de hierbas serranas.',
+    },
+    {
+      heading: 'Cómo combinar Merlo con Piscu Yaco',
+      body: 'El dique está a **25 km** de Merlo (unos 20–30 min por la RP-1). La mejor idea es dedicar una mañana a la playa y el kayak, y volver a Merlo para la tarde de compras y la cena.',
+    },
+  ]}
+  faq={[
+    { question: '¿Qué hacer en Merlo si llueve?', answer: 'Las chocolaterías, el mercado artesanal cubierto y las cafeterías del centro son refugio perfecto. También puede visitar bodegas y fábricas de productos regionales cercanas.' },
+    { question: '¿Cuánto tiempo conviene quedarse en Merlo?', answer: 'Lo ideal son 2 a 3 días: uno para el pueblo y sus miradores, otro para el Dique Piscu Yaco y la ruta de las sierras, y un tercero para relajar y comer bien.' },
+    { question: '¿Merlo está cerca del Dique Piscu Yaco?', answer: 'Sí: a unas **25 km** por la Ruta Provincial 1, unos 20–30 minutos en auto. Muchos visitantes lo hacen como excursión de día desde Merlo.' },
+    { question: '¿Qué actividades hay para familias en Merlo?', answer: 'Paseos en el centro, ferias, miradores accesibles, y el Dique Piscu Yaco con playa y kayak son opciones seguras y entretenidas para toda la familia.' },
+    { question: '¿Cuál es la mejor época para visitar Merlo?', answer: 'La primavera y el otoño tienen clima templado ideal. En verano hay más agua y actividad en el dique; en invierno, días soleados pero noches frías.' },
+  ]}
+  related={related}
+/>

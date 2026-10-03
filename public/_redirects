@@ -1,0 +1,13 @@
+# Trailing-slash canonicalization: force non-trailing-slash URLs
+/ /es 301
+/es/ /es 301
+/en/ /en 301
+/zh/ /zh 301
+/it/ /it 301
+
+# Spanish content-cluster pages
+/es/que-hacer-en-merlo-san-luis/ /es/que-hacer-en-merlo-san-luis 301
+/es/diques-en-san-luis/ /es/diques-en-san-luis 301
+/es/cortaderas-san-luis/ /es/cortaderas-san-luis 301
+/es/circuito-sur-piscu-yaco/ /es/circuito-sur-piscu-yaco 301
+/es/fotos-dique-piscu-yaco/ /es/fotos-dique-piscu-yaco 301

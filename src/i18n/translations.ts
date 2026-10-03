@@ -21,6 +21,12 @@ export type Translations = {
   faq: { title: string; subtitle: string; items: FAQItem[] };
   location: { title: string; address: string; openMaps: string };
   footer: { callToAction: string; text: string; made: string; linksTitle: string; links: LinkItem[] };
+  // Quick-access anchors on the first screen (mobile-first): Cómo llegar / Playas / Qué hacer / Mapa
+  quicklinks: { reach: string; beaches: string; things: string; map: string };
+  // "Datos útiles" fact sheet (Spanish homepage only) — highly snippet-friendly
+  quickfacts?: { heading: string; items: { label: string; value: string }[] };
+  // "Playas y agua" section (Spanish homepage only) — adds lago/playa/embalse semantics
+  water?: { title: string; intro: string; items: { heading: string; body: string }[] };
 };
 
 const ARGENTINA_LINKS: LinkItem[] = [
@@ -177,7 +183,7 @@ export const translations: Record<Locale, Translations> = {
       { question: "参观时有什么注意事项？", answer: "高原日照强烈、气候干燥，请注意防晒与补水；山区昼夜温差大。请保持安静观鸟、带走所有垃圾、不在水体中使用化学洗涤剂，共同守护这片“飞鸟的水坑”。" }
     ]},
     location: { title: "地图位置", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina（阿根廷 圣路易斯省）", openMaps: "在 Google Maps 查看位置" },
-    footer: { callToAction: "作为圣路易斯山间珍贵的公共水体，请与我们一起爱护环境、保护这片“飞鸟的水坑”。保持景区整洁，让更多人得以共享这份山水之美。", text: "© 2026 皮斯库亚科水库指南 · 保留所有权利。\n本网站是一个独立的第三方科普指南项目，致力于准确传播 Dique Piscu Yaco 的信息。我们与阿根廷政府或任何官方机构均无隶属关系。", made: "本网站是一个独立的非盈利科普项目，为探索者与学习者而建。", linksTitle: "友情链接", links: ARGENTINA_LINKS }
+    footer: { callToAction: "作为圣路易斯山间珍贵的公共水体，请与我们一起爱护环境、保护这片“飞鸟的水坑”。保持景区整洁，让更多人得以共享这份山水之美。", text: "© 2026 皮斯库亚科水库指南 · 保留所有权利。\n本网站是一个独立的第三方科普指南项目，致力于准确传播 Dique Piscu Yaco 的信息。我们与阿根廷政府或任何官方机构均无隶属关系。", made: "本网站是一个独立的非盈利科普项目，为探索者与学习者而建。", linksTitle: "友情链接", links: ARGENTINA_LINKS, quicklinks: { reach: "怎么去", beaches: "海滩", things: "玩什么", map: "地图" } }
   },
   en: {
     nav: { history: "Culture & History", architecture: "The Reservoir", monuments: "Activities", eco: "Eco Responsibility", visiting: "Visit Info", transportation: "Transportation", gallery: "Gallery", reviews: "Reviews", faq: "FAQ", location: "Location" },
@@ -325,11 +331,11 @@ export const translations: Record<Locale, Translations> = {
       { question: "What should I keep in mind when visiting?", answer: "The highlands are sunny and dry — protect yourself from the sun and drink water; temperatures swing day to night. Stay quiet for birding, take all rubbish, and avoid chemicals in the water to help protect this ‘birds’ watering place’." }
     ]},
     location: { title: "Map Location", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "View Location on Google Maps" },
-    footer: { callToAction: "As a precious public water body in the San Luis mountains, please join us in caring for the environment and protecting this 'birds' watering place'. Keep it clean so more people can share its beauty.", text: "© 2026 Dique Piscu Yaco Guide · All rights reserved.\nThis website is an independent third-party educational guide dedicated to sharing accurate information about Dique Piscu Yaco. We are not affiliated with the Argentine government or any official authority.", made: "This is an independent non-profit educational project, made for explorers and learners.", linksTitle: "Friendly Links", links: ARGENTINA_LINKS }
+    footer: { callToAction: "As a precious public water body in the San Luis mountains, please join us in caring for the environment and protecting this 'birds' watering place'. Keep it clean so more people can share its beauty.", text: "© 2026 Dique Piscu Yaco Guide · All rights reserved.\nThis website is an independent third-party educational guide dedicated to sharing accurate information about Dique Piscu Yaco. We are not affiliated with the Argentine government or any official authority.", made: "This is an independent non-profit educational project, made for explorers and learners.", linksTitle: "Friendly Links", links: ARGENTINA_LINKS, quicklinks: { reach: "How to get there", beaches: "Beaches", things: "What to do", map: "Map" } }
   },
   es: {
     nav: { history: "Cultura e Historia", architecture: "El Embalse", monuments: "Actividades", eco: "Responsabilidad Ecológica", visiting: "Información", transportation: "Transporte", gallery: "Galería", reviews: "Reseñas", faq: "FAQ", location: "Ubicación" },
-    hero: { tags: ["~25 km de Merlo", "Dique ecológico", "Entrada gratuita"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco", subtitle: "Dique Piscu Yaco · Aguas Cristalinas · Sierras de los Comechingones", cta: "Explorar Piscu Yaco" },
+    hero: { tags: ["Cortaderas, San Luis", "~25 km de Merlo", "Playas y kayak", "Entrada gratuita"], tagline: "Argentina · San Luis", title: "Dique Piscu Yaco: naturaleza y playas en Cortaderas, San Luis", subtitle: "Dique, lago y balneario en Cortaderas, cerca de Villa de Merlo", cta: "Explorar Piscu Yaco" },
     rating: { reviews: "reseñas", source: "Google Reseñas" },
     history: {
       title: "Historia y Orígenes",
@@ -473,7 +479,30 @@ export const translations: Record<Locale, Translations> = {
       { question: "¿Qué precauciones tener al visitar?", answer: "La altura es soleada y seca: protéjase del sol e hidrátese; hay amplitud térmica. Guarde silencio para observar aves, retire su basura y evite químicos en el agua para cuidar esta ‘aguada de los pájaros’." }
     ]},
     location: { title: "Ubicación", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "Ver en Google Maps" },
-    footer: { callToAction: "Como cuerpo de agua público y preciado de las sierras de San Luis, únete a nosotros para cuidar el ambiente y proteger esta 'aguada de los pájaros'. Mantenla limpia para que más personas compartan su belleza.", text: "© 2026 Guía de Dique Piscu Yaco · Todos los derechos reservados.\nEste sitio es un proyecto independiente de guía educativa de terceros, dedicado a difundir información precisa sobre Dique Piscu Yaco. No estamos afiliados con el gobierno argentino ni con autoridad oficial alguna.", made: "Este es un proyecto educativo sin fines de lucro, hecho para exploradores y aprendices.", linksTitle: "Enlaces Amigos", links: ARGENTINA_LINKS }
+    footer: { callToAction: "Como cuerpo de agua público y preciado de las sierras de San Luis, únete a nosotros para cuidar el ambiente y proteger esta 'aguada de los pájaros'. Mantenla limpia para que más personas compartan su belleza.", text: "© 2026 Guía de Dique Piscu Yaco · Todos los derechos reservados.\nEste sitio es un proyecto independiente de guía educativa de terceros, dedicado a difundir información precisa sobre Dique Piscu Yaco. No estamos afiliados con el gobierno argentino ni con autoridad oficial alguna.", made: "Este es un proyecto educativo sin fines de lucro, hecho para exploradores y aprendices.", linksTitle: "Enlaces Amigos", links: ARGENTINA_LINKS },
+    quicklinks: { reach: "Cómo llegar", beaches: "Playas", things: "Qué hacer", map: "Mapa" },
+    quickfacts: {
+      heading: "Datos útiles",
+      items: [
+        { label: "Ubicación", value: "Cortaderas, San Luis" },
+        { label: "Zona", value: "Sierras de los Comechingones" },
+        { label: "Cerca de", value: "Villa de Merlo" },
+        { label: "Tipo", value: "Dique / lago / balneario" },
+        { label: "Actividades", value: "Playa, kayak, paseo, picnic" },
+        { label: "Ideal para", value: "Familias, parejas, naturaleza" },
+        { label: "Cómo llegar", value: "Ruta Provincial Nº 1" },
+      ],
+    },
+    water: {
+      title: "Playas, balneario y el lago Piscu Yaco",
+      intro: "El Dique Piscu Yaco no es solo una represa: es un espejo de agua, una playa de arena y un balneario en plena naturaleza. Con unas 16,9 hectáreas de agua cristalina rodeadas por las Sierras de los Comechingones, es uno de los rincones más buscados cerca de Villa de Merlo.",
+      items: [
+        { heading: "Playas y balneario del Dique Piscu Yaco", body: "La costa del embalse cuenta con playas de arena y sectores habilitados como balneario, ideales para pasar el día en familia. El agua tranquila y la vista de las sierras lo vuelven perfecto para relajarse lejos del ruido." },
+        { heading: "¿Se puede nadar en el Dique Piscu Yaco?", body: "Sí: en las áreas habilitadas se puede bañar y disfrutar del agua. Al tratarse de un lago de montaña de poca profundidad cerca de la orilla, es apto para familias; no obstante, siempre conviene respetar las señalizaciones y los horarios sugeridos por los guardaparques." },
+        { heading: "Kayak y actividades acuáticas", body: "La superficie en calma es ideal para kayak, canoa y remo. Las embarcaciones sin motor permiten recorrer el espejo de agua en silencio y observar aves. También es posible la pesca deportiva y el paseo en bote, siempre respetando las normas locales." },
+        { heading: "El lago y las Sierras de los Comechingones", body: "Piscu Yaco es un lago artificial que se funde con la cadena montañosa de los Comechingones. Al atardecer, el agua queda en calma y las sierras se tiñen de ocre y rojo: el marco perfecto para fotos y para desconectar un fin de semana." },
+      ],
+    },
   },
   it: {
     nav: { history: "Cultura e Storia", architecture: "L'Invaso", monuments: "Attività", eco: "Responsabilità Ecologica", visiting: "Info Visita", transportation: "Trasporti", gallery: "Galleria", reviews: "Recensioni", faq: "FAQ", location: "Posizione" },
@@ -621,6 +650,6 @@ export const translations: Record<Locale, Translations> = {
       { question: "Cosa bisogna tener presente visitando?", answer: "L'altopiano è soleggiato e secco: proteggiti dal sole e idratati; c'è forte escursione termica. Silenzio per il birdwatching, porta via i rifiuti ed evita sostanze chimiche nell'acqua per proteggere questo ‘abbeveratoio degli uccelli’." }
     ]},
     location: { title: "Posizione", address: "C2XV+QM\nCortaderas\nSan Luis\nArgentina", openMaps: "Vedi su Google Maps" },
-    footer: { callToAction: "Come corpo idrico pubblico e prezioso delle sierras di San Luis, unisciti a noi per prenderti cura dell'ambiente e proteggere questo 'abbeveratoio degli uccelli'. Mantienilo pulito perché più persone possano condividere la sua bellezza.", text: "© 2026 Guida di Dique Piscu Yaco · Tutti i diritti riservati.\nQuesto sito è un progetto indipendente di guida educativa, dedicato a diffondere informazioni accurate su Dique Piscu Yaco. Non siamo affiliati con il governo argentino né con alcuna autorità ufficiale.", made: "Questo è un progetto educativo non profit, fatto per esploratori e apprendisti.", linksTitle: "Link Amici", links: ARGENTINA_LINKS }
+    footer: { callToAction: "Come corpo idrico pubblico e prezioso delle sierras di San Luis, unisciti a noi per prenderti cura dell'ambiente e proteggere questo 'abbeveratoio degli uccelli'. Mantienilo pulito perché più persone possano condividere la sua bellezza.", text: "© 2026 Guida di Dique Piscu Yaco · Tutti i diritti riservati.\nQuesto sito è un progetto indipendente di guida educativa, dedicato a diffondere informazioni accurate su Dique Piscu Yaco. Non siamo affiliati con il governo argentino né con alcuna autorità ufficiale.", made: "Questo è un progetto educativo non profit, fatto per esploratori e apprendisti.", linksTitle: "Link Amici", links: ARGENTINA_LINKS, quicklinks: { reach: "Come arrivare", beaches: "Spiagge", things: "Cosa fare", map: "Mappa" } }
   }
 };

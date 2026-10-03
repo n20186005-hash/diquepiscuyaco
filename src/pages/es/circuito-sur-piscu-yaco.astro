@@ -1,0 +1,47 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+
+const related = [
+  { href: '/es/que-hacer-en-merlo-san-luis', title: 'Qué hacer en Merlo, San Luis', text: 'Atracciones, miradores, balnearios y planes para tu visita.' },
+  { href: '/es/diques-en-san-luis', title: 'Diques en San Luis', text: 'Piscu Yaco y otros espejos de agua para disfrutar la naturaleza.' },
+  { href: '/es/cortaderas-san-luis', title: 'Cortaderas, San Luis', text: 'El pueblo donde nace el dique: qué ver y cómo llegar.' },
+  { href: '/es/fotos-dique-piscu-yaco', title: 'Fotos del Dique Piscu Yaco', text: 'Galería real del lago, las playas y las sierras.' },
+];
+---
+
+<SubpageLayout
+  slug="circuito-sur-piscu-yaco"
+  title="Circuito Sur desde Merlo | Piscu Yaco, Cortaderas y Villa Larca"
+  description="Circuito Sur desde Merlo: ruta por el Dique Piscu Yaco, Cortaderas y Villa Larca. Una excursión de día por el sur de San Luis."
+  crumb="Circuito Sur desde Merlo"
+  intro="El sur de San Luis se recorre en un **circuito de pueblos serranos y espejos de agua**. Esta ruta une Villa de Merlo, el **Dique Piscu Yaco** en Cortaderas y Villa Larca: ideal para una excursión de día."
+  sections={[
+    {
+      heading: 'Itinerario sugerido',
+      body: 'Salga de **Villa de Merlo** por la RP-1 hacia el sur, visite el **Dique Piscu Yaco** en Cortaderas (playa y kayak), continúe a **Villa Larca** para almorzar, y regrese a Merlo al atardecer. Son unos 80–100 km en total, cómodos en medio día.',
+    },
+    {
+      heading: 'Merlo, punto de partida',
+      body: 'Abastezca combustible, agua y provisiones en Merlo antes de salir. El pueblo es la mejor base por su oferta de alojamiento, gastronomía y el mercado artesanal.',
+    },
+    {
+      heading: 'Piscu Yaco y Cortaderas',
+      body: 'A 25 km de Merlo, el **Dique Piscu Yaco** ofrece la parada acuática: playas de arena, balneario, kayak y picnic. Cortaderas es el pueblo umbral del embalse, perfecto para una pausa.',
+    },
+    {
+      heading: 'Villa Larca',
+      body: 'Más al sur, **Villa Larca** conserva el encanto serrano con ríos y miradores. Es buen lugar para almorzar o tomar un café antes de retomar la ruta de vuelta.',
+    },
+    {
+      heading: 'Consejos para la ruta',
+      body: 'Lleve **agua, protector solar y ropa de abrigo** (hay amplitud térmica). La señal de celular es inestable en las sierras: descargue el mapa offline. Los últimos km al dique son de ripio y pavimento de montaña.',
+    },
+  ]}
+  faq={[
+    { question: '¿Cuánto dura el circuito sur?', answer: 'Se puede hacer en medio día si solo visita Piscu Yaco y Cortaderas, o en un día completo si incluye Villa Larca y paradas de comida.' },
+    { question: '¿Se puede hacer el circuito en auto propio?', answer: 'Sí, y es lo recomendado: la RP-1 y los caminos de las sierras están en buen estado, aunque el tramo final al dique es de ripio y pavimento de montaña.' },
+    { question: '¿Dónde cargar nafta para el circuito?', answer: 'En Villa de Merlo antes de salir. Hacia el sur los pueblos son pequeños y no siempre tienen surtidores.' },
+    { question: '¿El circuito es apto para familias?', answer: 'Sí: las playas de Piscu Yaco, los miradores y las paradas en pueblos tranquilos son adecuados para todas las edades.' },
+  ]}
+  related={related}
+/>

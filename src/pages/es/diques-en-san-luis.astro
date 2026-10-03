@@ -1,0 +1,47 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+
+const related = [
+  { href: '/es/que-hacer-en-merlo-san-luis', title: 'Qué hacer en Merlo, San Luis', text: 'Atracciones, miradores, balnearios y planes para tu visita.' },
+  { href: '/es/cortaderas-san-luis', title: 'Cortaderas, San Luis', text: 'El pueblo donde nace el dique: qué ver y cómo llegar.' },
+  { href: '/es/circuito-sur-piscu-yaco', title: 'Circuito Sur desde Merlo', text: 'Ruta por Piscu Yaco, Cortaderas y Villa Larca.' },
+  { href: '/es/fotos-dique-piscu-yaco', title: 'Fotos del Dique Piscu Yaco', text: 'Galería real del lago, las playas y las sierras.' },
+];
+---
+
+<SubpageLayout
+  slug="diques-en-san-luis"
+  title="Diques en San Luis | Piscu Yaco y otros espejos de agua"
+  description="Diques en San Luis: el Dique Piscu Yaco en Cortaderas y otros lagos y embalses para disfrutar del agua, la pesca y la naturaleza."
+  crumb="Diques en San Luis"
+  intro="La provincia de San Luis tiene varios **espejos de agua y embalses** rodeados de sierras. El más buscado en el sur, cerca de Villa de Merlo, es el **Dique Piscu Yaco**, pero vale conocer también otras opciones."
+  sections={[
+    {
+      heading: 'Dique Piscu Yaco, el del sur',
+      body: 'Ubicado en **Cortaderas**, a 25 km de Villa de Merlo, el Piscu Yaco es un lago de unas 16,9 hectáreas con **playas de arena, balneario y kayak**. Es de acceso libre y gratuito, lo que lo vuelve ideal para una salida de día en familia.',
+    },
+    {
+      heading: 'Otros espejos de agua de San Luis',
+      body: 'Cerca de la capital destaca el **Dique Potrero de los Funes**, rodeado de un circuito muy fotografiado. En el corredor del Conlara también se menciona el **Dique La Huertita**. Cada uno tiene accesos y servicios distintos: conviene verificar horarios en el sitio oficial de Turismo San Luis antes de ir.',
+    },
+    {
+      heading: 'Por qué elegir Piscu Yaco',
+      body: 'Si su base es Merlo, Piscu Yaco es el más cercano y el único con playa habilitada para bañarse en la zona. Su agua tranquila lo hace perfecto para **kayak, pesca deportiva y picnic** sin moverse horas en auto.',
+    },
+    {
+      heading: 'Actividades en los diques',
+      body: 'En todos los embalses de la provincia predominan las actividades de bajo impacto: **remo, canoa, pesca y caminatas costeras**. Recuerde llevar basura de vuelta y no usar jabones en el agua para cuidar estos ecosistemas.',
+    },
+    {
+      heading: 'Cómo llegar a Piscu Yaco',
+      body: 'Desde Merlo tome la **Ruta Provincial 1 (RP-1)** hacia el sur, gire al camino de las sierras cerca de km 25,5 y recorra unos 2 km más. El acceso es de ripio y pavimento en los últimos tramos.',
+    },
+  ]}
+  faq={[
+    { question: '¿Cuántos diques hay en San Luis?', answer: 'La provincia cuenta con varios embalses y espejos de agua artificiales. Los más conocidos son Piscu Yaco (sur, Cortaderas), Potrero de los Funes (cerca de la capital) y La Huertita (corredor del Conlara).' },
+    { question: '¿Cuál dique está más cerca de Merlo?', answer: 'El **Dique Piscu Yaco**, a unas 25 km (20–30 min por la RP-1). Es la opción acuática más cercana y accesible desde Villa de Merlo.' },
+    { question: '¿Se puede nadar en los diques de San Luis?', answer: 'En el Dique Piscu Yaco sí, en las áreas habilitadas como balneario. En otros embalses depende de la señalización local; siempre respete las indicaciones de los guardaparques.' },
+    { question: '¿El Dique Piscu Yaco es gratuito?', answer: 'Sí, el área pública costera es de **acceso libre y gratuito**. Solo algunos alquileres (botes, camping) pueden tener cargo por parte de operadores locales.' },
+  ]}
+  related={related}
+/>

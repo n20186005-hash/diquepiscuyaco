@@ -1,0 +1,47 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+
+const related = [
+  { href: '/es/que-hacer-en-merlo-san-luis', title: 'Qué hacer en Merlo, San Luis', text: 'Atracciones, miradores, balnearios y planes para tu visita.' },
+  { href: '/es/diques-en-san-luis', title: 'Diques en San Luis', text: 'Piscu Yaco y otros espejos de agua para disfrutar la naturaleza.' },
+  { href: '/es/circuito-sur-piscu-yaco', title: 'Circuito Sur desde Merlo', text: 'Ruta por Piscu Yaco, Cortaderas y Villa Larca.' },
+  { href: '/es/fotos-dique-piscu-yaco', title: 'Fotos del Dique Piscu Yaco', text: 'Galería real del lago, las playas y las sierras.' },
+];
+---
+
+<SubpageLayout
+  slug="cortaderas-san-luis"
+  title="Cortaderas, San Luis | Qué hacer, cómo llegar y el Dique Piscu Yaco"
+  description="Cortaderas, San Luis: el pueblo del Dique Piscu Yaco en el Valle del Conlara. Qué ver, cómo llegar desde Merlo y planes para tu visita."
+  crumb="Cortaderas, San Luis"
+  intro="**Cortaderas** es una localidad del sur de San Luis, en el **Valle del Conlara**, donde nace el Dique Piscu Yaco. Pequeña y tranquila, es el punto de partida para disfrutar el lago y las Sierras de los Comechingones."
+  sections={[
+    {
+      heading: 'Dónde queda Cortaderas',
+      body: 'Cortaderas se sitúa sobre la **Ruta Provincial 1 (RP-1)**, a unos 25 km de Villa de Merlo y cerca de Villa Larca, dentro del corredor turístico del Valle del Conlara. Está en la zona de entrada al embalse Piscu Yaco.',
+    },
+    {
+      heading: 'El Dique Piscu Yaco en Cortaderas',
+      body: 'El principal atractivo es el **Dique Piscu Yaco**, un lago de unas 16,9 hectáreas con playas de arena, balneario, kayak y pesca. El pueblo funciona como umbral del dique: desde aquí parte el camino de montaña a la costa.',
+    },
+    {
+      heading: 'Qué hacer en el pueblo',
+      body: 'Cortaderas es ideal para quienes buscan calma. Sirve de base para senderismo en los Comechingones, avistamiento de aves y tardes de picnic a orillas del agua, lejos del bullicio de las grandes villas turísticas.',
+    },
+    {
+      heading: 'Cómo llegar a Cortaderas',
+      body: 'Desde **Villa de Merlo** se toma la RP-1 hacia el sur; en aproximadamente 25 km se llega a Cortaderas. También hay micros y viajes compartidos desde la terminal de Merlo que dejan en el acceso al dique.',
+    },
+    {
+      heading: 'Cortaderas en el circuito sur',
+      body: 'Junto con Villa Larca y Los Molles, Cortaderas forma parte del **circuito sur de San Luis**. Combinar estos pueblos en una ruta de día permite descubrir miradores, ríos y la cultura serrana sin alejarse mucho de Merlo.',
+    },
+  ]}
+  faq={[
+    { question: '¿Cortaderas está en la provincia de San Luis?', answer: 'Sí, Cortaderas es una localidad del sur de la provincia de San Luis, en el Valle del Conlara, dentro del departamento Chacabuco.' },
+    { question: '¿Cómo llegar a Cortaderas desde Merlo?', answer: 'Por la Ruta Provincial 1 hacia el sur, unos 25 km (20–30 min en auto). También hay transporte público desde la terminal de Merlo.' },
+    { question: '¿Qué se puede hacer en Cortaderas?', answer: 'Lo principal es visitar el Dique Piscu Yaco: playa, kayak, pesca y picnic. El entorno serrano también invita a caminatas y avistamiento de aves.' },
+    { question: '¿Hay donde alojarse en Cortaderas?', answer: 'Es un pueblo pequeño; la mayoría de los visitantes se alojan en Villa de Merlo y vienen en excursión de día al dique.' },
+  ]}
+  related={related}
+/>

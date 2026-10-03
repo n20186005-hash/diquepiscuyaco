@@ -11,13 +11,17 @@ interface Props {
   description: string;
   pathOverride?: string;
   includeSchema?: boolean;
+  noindex?: boolean;
+  alternates?: Record<string, string>;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
-const { locale, title, description, pathOverride, includeSchema = true } = Astro.props as Props;
+const { locale, title, description, pathOverride, includeSchema = true, noindex = false, alternates: alternatesOverride, ogTitle: ogTitleProp, ogDescription: ogDescriptionProp } = Astro.props as Props;
 const cfg = localeConfig[locale] || localeConfig.es;
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://diquepiscuyaco.com';
 const canonical = pathOverride ? `${site}${pathOverride}` : `${site}/${locale}`;
-const alternates: Record<string, string> = {
+const alternates: Record<string, string> = alternatesOverride || {
   es: `${site}/es`,
   en: `${site}/en`,
   zh: `${site}/zh`,
@@ -25,7 +29,10 @@ const alternates: Record<string, string> = {
 };
 const ogImage = `${site}/gallery/dique-piscu-yaco-01.jpg`;
 const seo = getSeo(locale);
+const pageOgTitle = ogTitleProp || seo.ogTitle;
+const pageOgDescription = ogDescriptionProp || seo.ogDescription;
 const schema = includeSchema ? generateSchema(locale, site) : null;
+const xDefault = alternates.es || Object.values(alternates)[0] || canonical;
 ---
 
 <!doctype html>
@@ -42,7 +49,7 @@ const schema = includeSchema ? generateSchema(locale, site) : null;
         <link rel="alternate" hreflang={l} href={url} />
       ))
     }
-    <link rel="alternate" hreflang="x-default" href={alternates.es} />
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={cfg.ogLocale} />
@@ -52,15 +59,15 @@ const schema = includeSchema ? generateSchema(locale, site) : null;
         .map((c) => <meta property="og:alternate_locale" content={c.ogLocale} />)
     }
     <meta property="og:url" content={canonical} />
-    <meta property="og:title" content={seo.ogTitle} />
-    <meta property="og:description" content={seo.ogDescription} />
+    <meta property="og:title" content={pageOgTitle} />
+    <meta property="og:description" content={pageOgDescription} />
     <meta property="og:site_name" content={seo.siteName} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={seo.ogTitle} />
-    <meta name="twitter:description" content={seo.ogDescription} />
+    <meta name="twitter:title" content={pageOgTitle} />
+    <meta name="twitter:description" content={pageOgDescription} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
 

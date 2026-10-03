@@ -1,0 +1,41 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+
+const related = [
+  { href: '/es/que-hacer-en-merlo-san-luis', title: 'Qué hacer en Merlo, San Luis', text: 'Atracciones, miradores, balnearios y planes para tu visita.' },
+  { href: '/es/diques-en-san-luis', title: 'Diques en San Luis', text: 'Piscu Yaco y otros espejos de agua para disfrutar la naturaleza.' },
+  { href: '/es/cortaderas-san-luis', title: 'Cortaderas, San Luis', text: 'El pueblo donde nace el dique: qué ver y cómo llegar.' },
+  { href: '/es/circuito-sur-piscu-yaco', title: 'Circuito Sur desde Merlo', text: 'Ruta por Piscu Yaco, Cortaderas y Villa Larca.' },
+];
+---
+
+<SubpageLayout
+  slug="fotos-dique-piscu-yaco"
+  title="Fotos del Dique Piscu Yaco | Galería de playas, kayak y sierras"
+  description="Fotos reales del Dique Piscu Yaco en Cortaderas, San Luis: playas, kayak, el espejo de agua y las Sierras de los Comechingones."
+  crumb="Fotos del Dique Piscu Yaco"
+  intro="Una galería real del **Dique Piscu Yaco**: agua cristalina, playas de arena, kayak al atardecer y las **Sierras de los Comechingones** de fondo, en Cortaderas, San Luis."
+  showGallery={true}
+  galleryAlt="Dique Piscu Yaco en Cortaderas, San Luis"
+  sections={[
+    {
+      heading: 'Qué verás en las fotos',
+      body: 'El conjunto reúne el **espejo de agua** en calma, la franja de **playa de arena**, embarcaciones de kayak y el contorno granítico de los Comechingones. Es el mismo lugar que aparece en decenas de búsquedas de “dique piscu yaco fotos”.',
+    },
+    {
+      heading: 'El mejor momento para fotografiar',
+      body: 'La luz dorada del **atardecer** es la mejor: el agua se vuelve espejo y las sierras se tiñen de ocre y rojo. Las mañanas, en cambio, tienen rocío y aves activas sobre el bañado.',
+    },
+    {
+      heading: 'Consejos para tus propias fotos',
+      body: 'Lleve un objetivo gran angular para las sierras y un trípode ligero para el reflejo en el agua. Respete las zonas de nidificación y no deje basura: el paisaje se cuida entre todos.',
+    },
+  ]}
+  faq={[
+    { question: '¿Las fotos del Dique Piscu Yaco son reales?', answer: 'Sí, son imágenes reales del embalse en Cortaderas, San Luis, sin retoques de color artificial. El agua suele verse efectivamente cristalina en días despejados.' },
+    { question: '¿Cuándo sacar las mejores fotos?', answer: 'Al atardecer, cuando el agua queda en calma y las sierras se tiñen de tonos cálidos. Las mañanas claras también son buenas para aves y rocío.' },
+    { question: '¿Se puede hacer una sesión de fotos en el dique?', answer: 'Sí, el área pública costera es de acceso libre. Para sesiones profesionales o comerciales, consulte con la autoridad local de Cortaderas.' },
+    { question: '¿El lugar es tan turquesa como en las fotos?', answer: 'El agua es clara y verdosa-azulada, no necesariamente turquesa; el tono depende del cielo y la hora. En días nublados se ve más plomiza, pero sigue siendo muy fotogénica.' },
+  ]}
+  related={related}
+/>

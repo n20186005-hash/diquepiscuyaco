@@ -10,22 +10,24 @@ export interface Seo {
 export function getSeo(locale: string): Seo {
   const map: Record<string, Seo> = {
     es: {
-      title: 'Dique Piscu Yaco — San Luis, Argentina',
+      title: 'Dique Piscu Yaco, San Luis | Playas, cómo llegar y qué hacer',
       description:
-        'Guía de viaje al Dique Piscu Yaco en San Luis, Argentina. Espejo de agua cristalino en las Sierras de los Comechingones.',
-      ogTitle: 'Dique Piscu Yaco — San Luis, Argentina',
+        'Guía del Dique Piscu Yaco en Cortaderas, San Luis: cómo llegar desde Villa de Merlo, playas, kayak, servicios, fotos y consejos para organizar tu visita.',
+      ogTitle: 'Dique Piscu Yaco, San Luis | Playas, cómo llegar y qué hacer',
       ogDescription:
-        'Guía de viaje al Dique Piscu Yaco en San Luis, Argentina. Espejo de agua cristalino.',
+        'Dique Piscu Yaco en Cortaderas, cerca de Villa de Merlo: playas, kayak, cómo llegar y todo para planificar tu visita.',
       siteName: 'Guía de Dique Piscu Yaco',
       keywords: [
         'Dique Piscu Yaco',
         'Piscu Yaco',
-        'San Luis tourism',
-        'Argentina tourism',
+        'Cortaderas',
+        'San Luis',
         'Villa de Merlo',
+        'playas San Luis',
+        'cómo llegar Merlo',
+        'kayak Piscu Yaco',
         'Sierras de los Comechingones',
-        '皮斯库亚科水库',
-        '圣路易斯旅游',
+        'diques en San Luis',
       ],
     },
     en: {
